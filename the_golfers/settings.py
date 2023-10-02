@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-phillywhitty-thegolfers-32sxaj4omfe.ws-eu105.gitpod.io']
+ALLOWED_HOSTS = ['8000-phillywhitty-thegolfers-32sxaj4omfe.ws-eu105.gitpod.io', 'localhost']
 
 
 # Application definition
