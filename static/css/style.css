@@ -148,6 +148,10 @@ body {
     }
 }
 
+.navbar-brand {
+    padding-right: 15px;
+}
+
 /* Footer */
 
 .footer {
