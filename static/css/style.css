@@ -148,6 +148,12 @@ body {
     }
 }
 
+/* Footer */
+
+.footer {
+    background-color: #0f483f;
+}
+
 
 /* Adjust the width for comment section to be responsive in mobiles. */
 @media (min-width: 1200px) {
