@@ -60,6 +60,17 @@ body {
     border-radius: 5%;
 }
 
+.about-img {
+
+    border: 5px solid #ffa300;
+    border-radius: 5%;
+
+}
+
+.join-now-text {
+    color: white;
+}
+
 .image-container {
     position: relative;
 }

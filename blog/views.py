@@ -9,10 +9,17 @@ def landing_page(request):
     """
     return render(request, "landing_page.html")
 
+def about(request):
+    """
+    Render the about.html template
+    """
+    return render(request, "about.html")
+
+
 
 
 class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
-    template_name = 'index.html'
+    template_name = 'about.html'
     paginate_by = 6
