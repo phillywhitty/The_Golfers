@@ -5,11 +5,11 @@
 
 /* Custom colors declared in variables */
 .bg-clr-second {
-    background-color: #white !important;
+    background-color: #0b2b26 !important;
 }
 
 .bg-clr-dom {
-    background-color: #white !important;
+    background-color: #0b2b26 !important;
 }
 
 .bg-clr-dom-light {
@@ -50,7 +50,12 @@ body {
 }
 
 .card-body {
-    border: 1px solid #000;
+    color: #fff;
+    border: 2px solid orange;
+}
+
+.row {
+    gap: 2rem;
 }
 
 .card-comment {
