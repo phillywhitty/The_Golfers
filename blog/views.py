@@ -16,10 +16,15 @@ def about(request):
     return render(request, "about.html")
 
 
+def index(request):
+    """
+    Render the index.html template
+    """
+    return render(request, "index.html")
 
 
 class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
-    template_name = 'about.html'
+    template_name = 'index.html'
     paginate_by = 6

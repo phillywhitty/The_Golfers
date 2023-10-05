@@ -5,11 +5,11 @@
 
 /* Custom colors declared in variables */
 .bg-clr-second {
-    background-color: #0b2b26 !important;
+    background-color: #white !important;
 }
 
 .bg-clr-dom {
-    background-color: #0b2b26 !important;
+    background-color: #white !important;
 }
 
 .bg-clr-dom-light {
@@ -49,10 +49,18 @@ body {
     background-color: transparent;
 }
 
+.card-body {
+    border: 1px solid #000;
+}
+
 .card-comment {
     border: none;
     background-color: transparent;
     width: 20rem;
+}
+
+.index-body {
+    background-color: #23BBBB;
 }
 
 .profile-img {
