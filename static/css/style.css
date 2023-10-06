@@ -54,7 +54,11 @@ body {
     border: 2px solid orange;
 }
 
-.row {
+.card-img {
+    padding-top: 20px;
+}
+
+.card-body-one {
     gap: 2rem;
 }
 
