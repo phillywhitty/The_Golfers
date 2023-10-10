@@ -182,5 +182,37 @@ Wireframes: https://drive.google.com/drive/folders/1WwDSap35rXV1i8_9hCPBqiXvpMdo
 </div>
 
 - Icons are taken from the [Fontawesome](https://fontawesome.com/) Icon library and are utilised as classes in the `<i>` tag.
-- As they are utilised as classes, they can easily be styled using other classes or IDs in the same tag. I often used Bootstrap classes to style them uniformly.
-- Icons are utilised in the footer for social account icons and the "scroll-to-top" arrow on the gallery page.
+- Since they function as classes, they can be effortlessly customized using other classes or IDs within the same tag. I frequently employed Bootstrap classes to ensure consistent styling a 
+  across different elements.
+- Icons are employed in the footer for social media accounts.
+
+### Colors
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/44118951/92331821-a64d1500-f079-11ea-9ceb-a9b1b85872bd.png" alt="Color Pallette">
+</div>
+
+- I aimed for a minimal look on the site, using simple and clean colors to accentuate the photos.
+- Using dark green as the primary color creates sharp contrast with the photos, drawing focus without distractions, aligning with theater practices. Unlike white, which relates to lighting, dark green enhances visual impact on screens emitting light.
+- White text is used to stand out against the vibrant backgrounds of primary and accent colors.
+- I incorporated orange in specific text and buttons to complement the green elements harmoniously.
+
+
+### Images
+<div align="center">
+  <img src="https://res.cloudinary.com/dzxjg4vwg/image/upload/v1696947045/the_golfers_images_readme_acv3gy.png" alt="Images">
+</div>
+
+- The site has a heavy focus on image use, using full-size quality images for exhibition purposes.
+- As such, the images use a script while loading that blurs thumbnails and swaps in the full quality image when fully loaded.
+- In the main gallery, images are displayed in three columns responsively, so they can easily be seen on any size device.
+- Clicking on a small image will open up a full-page modal that displays the image in detail.
+- The images will automatically space themselves vertically within the column, so the gallery height is even.
+- Images will swap out on selecting another country, resetting the loading blur feature and changing URLs." alt="Images">
+</div>
+
+- The site has a heavy focus on image use, using full-size quality images for exhibition purposes.
+- As such, the images use a script while loading that blurs thumbnails and swaps in the full quality image when fully loaded.
+- In the main gallery, images are displayed in three columns responsively, so they can easily be seen on any size device.
+- Clicking on a small image will open up a full-page modal that displays the image in detail.
+- The images will automatically space themselves vertically within the column, so the gallery height is even.
+- Images will swap out on selecting another country, resetting the loading blur feature and changing URLs.
