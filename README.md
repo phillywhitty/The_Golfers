@@ -1,110 +1,166 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<div align="center">
+  <img src="https://res.cloudinary.com/dzxjg4vwg/image/upload/v1696938620/Screenshot_2023-10-10_at_12.48.12_wwubqt.png" style="background-color: black" alt="The Golfers Photo">
+</div>
 
-Welcome phillywhitty,
+[The Golfers](https://the-golfers-blog-ed907c4b0918.herokuapp.com/) The Golfers Blog is your go-to destination for discovering the best golf courses in Ireland. This blog allows users to review these top-notch courses, sharing their experiences through comments and likes. Whether you're a seasoned pro or a beginner, our platform aims to pique your interest and invite you to explore Ireland's finest golfing destinations. Join our inclusive community and embark on a golfing journey filled with inspiration and companionship.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+## Table of Contents
+1. <details open>
+    <summary><a href="#ux">UX</a></summary>
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+    <ul>
+    <li><details>
+    <summary><a href="#goals">Goals</a></summary>
 
-## Gitpod Reminders
+    - [Visitor Goals](#visitor-goals)
+    - [Business Goals](#business-goals)
+    - [User Stories](#user-stories)
+    </details></li>
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+    <li><details>
+    <summary><a href="#visual-design">Visual Design</a></summary>
 
-`python3 -m http.server`
+    - [Wireframes](#wireframes)
+    - [Fonts](#fonts)
+    - [Icons](#icons)
+    - [Colors](#colors)
+    - [Images](#images)
+    - [Styling](#styling)
+    </details></li>
+    </ul>
+</details>
 
-A blue button should appear to click: _Make Public_,
+2. <details open>
+    <summary><a href="#features">Features</a></summary>
 
-Another blue button should appear to click: _Open Browser_.
+    <ul>
+    <li><details>
+    <summary><a href="#page-elements">Page Elements</a></summary>
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+    - [All Pages](#all-pages)
+    - [Index Page](#index-page)
+    - [Gallery Page](#about-page)
+    - [Contact Page](#contact-page)
+    </details></li>
 
-A blue button should appear to click: _Make Public_,
+    <li><details>
+    <summary><a href="#additional-features">Additional Features</a></summary>
 
-Another blue button should appear to click: _Open Browser_.
+    - [Image Loading Blur](#image-loading-blur)
+    - [Email](#email)
+    </details></li>
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+    <li><details>
+    <summary><a href="#feature-ideas">Feature Ideas</a></summary>
 
-To log into the Heroku toolbelt CLI:
+    - [Basic](#basic)
+    - [Content](#content)
+    </details></li>
+    </ul>
+</details>
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+3. <details open>
+    <summary><a href="#technologies-used">Technologies Used</a></summary>
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+    - [Languages](#languages)
+    - [Frameworks](#frameworks)
+    - [Libraries](#libraries)
+    - [APIs](#apis)
+    - [Platforms](#platforms)
+    - [Other Tools](#other-tools)
+</details>
 
-------
+4. <details open>
+    <summary><a href="#testing">Testing</a></summary>
 
-## Release History
+    <ul>
+    <li><details>
+    <summary><a href="#methods">Methods</a></summary>
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+    - [Validation](#validation)
+    - [General Testing](#general-testing)
+    - [Mobile Testing](#mobile-testing)
+    - [Desktop Testing](#desktop-testing)
+    </details></li>
 
-**September 20 2023:** Update Python version to 3.9.17.
+    <li><details>
+    <summary><a href="#bugs">Bugs</a></summary>
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+    - [Known Bugs](#known-bugs)
+    - [Fixed Bugs](#fixed-bugs)
+    </details></li>
+    </ul>
+</details>
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+5. <details open>
+    <summary><a href="#deployment">Deployment</a></summary>
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+    <ul>
+    <li><details>
+    <summary><a href="#local-deployment">Local Deployment</a></summary>
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+    - [Local Preparation](#local-preparation)
+    - [Local Instructions](#local-instructions)
+    </details></li>
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+    <li><details>
+    <summary><a href="#github-deployment">Github Deployment</a></summary>
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+    - [Github Preparation](#github-preparation)
+    - [Github Instructions](#github-instructions)
+    </details></li>
+    </ul>
+</details>
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+6. <details open>
+    <summary><a href="#credit-and-contact">Credit and Contact</a></summary>
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+    - [Content](#content)
+    - [Contact](#contact)
+</details>
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+----
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+# UX
+## Goals
+### Visitor Goals
+The target audience for The Golfers are:
+- Explore reviews and info about Ireland's best golf courses.
+- Connect with fellow golf enthusiasts through comments and discussions.
+- Post tips and recommendations, fostering knowledge exchange.
+- Find courses for beginners and pros alike, catering to diverse skill levels.
+- Get the latest news, events, and trends in the Irish golfing scene.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+User goals are:
+- Users can plan their golf vacations by accessing detailed information about courses, facilities, and nearby amenities.
+- Golfers can read user reviews to make informed decisions about which courses align with their preferences and playing style.
+- Beginners can seek advice from experienced golfers, creating a supportive environment for skill development.
+- Golf enthusiasts can find suitable courses and facilities to organize and host golf tournaments with friends or colleagues.
+- Users can access recommendations and reviews for golfing equipment, helping them make wise purchasing choices.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+The Golfers Blog fills these needs by:
+- The Golfers Blog provides in-depth details about various golf courses, helping users plan their golfing trips effectively.
+- Real user reviews on the blog enable golfers to make informed decisions, ensuring they choose courses that align with their preferences and skill levels.
+- The blog fosters a sense of community, allowing beginners to connect with experienced golfers, facilitating mentorship and skill development.
+- Providing social media links to follow The Golfer Blog
+- The platform suggests suitable courses for organizing tournaments, ensuring users find the perfect venue for their golfing events.
+- Equipment Reviews and Recommendations: The Golfers Blog offers insights into golfing gear, enabling users to explore trusted recommendations, aiding them in making smart purchasing decisions.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+### Business Goals
+The Business Goals of The Golfers Blog are:
+- Foster active participation through comments and likes, creating a vibrant golfing community.
+- Increase registered users and regular visitors, broadening the blog's audience of golf enthusiasts.
+- Content Excellence: Deliver consistent, high-quality content on golf courses and equipment, establishing the blog as a trusted source.
+- Gain interest and connect with social media.
+- Forge collaborations with golf courses and equipment brands for mutual promotion and industry credibility.
 
-------
+### User Stories
+1. I expect a user-friendly interface for effortless exploration and easy access to relevant golfing information.
+0. I want to seek a lively community platform for sharing experiences, asking questions, and connecting with fellow golf enthusiasts.
+0. I will look for engaging stories, tips, and experiences shared by golfers, motivating them to improve their skills and explore new courses..
+0. I desire interactive elements like ratings, comments, and likes, enabling active participation and expression of opinions.
+0. As a user I need a responsive design for seamless access on various devices, ensuring convenience while on smartphones or tablets.
+0. I expect up-to-date information on events, tournaments, equipment releases, and industry news, keeping them informed about the golfing landscape.
+0. I expect to be able to follow the Golfers Blog through social media.
 
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!

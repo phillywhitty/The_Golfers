@@ -24,13 +24,10 @@
                     src="https://res.cloudinary.com/dzxjg4vwg/image/upload/v1696331656/Screenshot_2023-10-03_at_12.13.52_pjcpjf.png"
                     alt="golf" class="img-fluid card-img-top">
                 <div class="card-body">
-                    <h4 class="card-title">Blog Post One</h4>
-                    <small class="text-muted">Written by Philip on 18/07</small>
-                    <hr>
-                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Quod ipsa necessitatibus, deleniti debitis nostrum pariatur amet eos animi placeat
-                        corrupti modi quae voluptatum maiores cupiditate eveniet voluptatibus magni inventore
-                        laudantium!</p>
+                    {% for post in post_list %}
+                    <h1 class="greenpost"> {{ post.title }}</h1>
+
+                    {% endfor %}
                 </div>
             </div>
 
