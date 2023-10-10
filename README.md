@@ -164,3 +164,23 @@ The Business Goals of The Golfers Blog are:
 0. I expect up-to-date information on events, tournaments, equipment releases, and industry news, keeping them informed about the golfing landscape.
 0. I expect to be able to follow the Golfers Blog through social media.
 
+
+## Visual Design
+### Wireframes
+Wireframes: https://drive.google.com/drive/folders/1WwDSap35rXV1i8_9hCPBqiXvpMdoFJsQ?usp=sharing
+
+### Fonts
+<div align="center">
+  <img src="https://res.cloudinary.com/dzxjg4vwg/image/upload/v1696941472/Screenshot_2023-10-10_at_13.37.17_nlpubg.png" alt="Fonts">
+</div>
+
+- The primary font, San-Serif was selected due to its standard, straightforward, and informative nature, striking a balance between approachability and professionalism. It exudes a friendly and conversational tone while maintaining a sense of seriousness.
+
+### Icons
+<div align="center">
+  <img src="https://res.cloudinary.com/dzxjg4vwg/image/upload/v1696941819/Screenshot_2023-10-10_at_13.43.22_wzo9i5.png" alt="Icons">
+</div>
+
+- Icons are taken from the [Fontawesome](https://fontawesome.com/) Icon library and are utilised as classes in the `<i>` tag.
+- As they are utilised as classes, they can easily be styled using other classes or IDs in the same tag. I often used Bootstrap classes to style them uniformly.
+- Icons are utilised in the footer for social account icons and the "scroll-to-top" arrow on the gallery page.
