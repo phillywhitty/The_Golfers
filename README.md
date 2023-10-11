@@ -202,17 +202,3 @@ Wireframes: https://drive.google.com/drive/folders/1WwDSap35rXV1i8_9hCPBqiXvpMdo
   <img src="https://res.cloudinary.com/dzxjg4vwg/image/upload/v1696947045/the_golfers_images_readme_acv3gy.png" alt="Images">
 </div>
 
-- The site has a heavy focus on image use, using full-size quality images for exhibition purposes.
-- As such, the images use a script while loading that blurs thumbnails and swaps in the full quality image when fully loaded.
-- In the main gallery, images are displayed in three columns responsively, so they can easily be seen on any size device.
-- Clicking on a small image will open up a full-page modal that displays the image in detail.
-- The images will automatically space themselves vertically within the column, so the gallery height is even.
-- Images will swap out on selecting another country, resetting the loading blur feature and changing URLs." alt="Images">
-</div>
-
-- The site has a heavy focus on image use, using full-size quality images for exhibition purposes.
-- As such, the images use a script while loading that blurs thumbnails and swaps in the full quality image when fully loaded.
-- In the main gallery, images are displayed in three columns responsively, so they can easily be seen on any size device.
-- Clicking on a small image will open up a full-page modal that displays the image in detail.
-- The images will automatically space themselves vertically within the column, so the gallery height is even.
-- Images will swap out on selecting another country, resetting the loading blur feature and changing URLs.

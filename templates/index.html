@@ -21,12 +21,28 @@
 
             <div class="card" style="width: 25rem;">
                 <img class="card-img"
-                    src="https://res.cloudinary.com/dzxjg4vwg/image/upload/v1696331656/Screenshot_2023-10-03_at_12.13.52_pjcpjf.png"
+                    src="https://res.cloudinary.com/dzxjg4vwg/image/upload/c_scale,h_821,w_1224/v1697025782/Screenshot_2023-10-11_at_12.58.21_na0n0n.png"
                     alt="golf" class="img-fluid card-img-top">
                 <div class="card-body">
-                    {% for post in post_list %}
-                    <h1 class="greenpost"> {{ post.title }}</h1>
+                    {% for post in k_club_posts %}
+                    <h4 class="card-title">{{post.title}}</h4>
+                    <small class="text-muted">{{post.author}}</small>
+                    <hr>
+                    <p class="card-text">{{post.excerpt}}</p>
+                    {% endfor %}
+                </div>
+            </div>
 
+            <div class="card" style="width: 25rem;">
+                <img class="card-img"
+                    src="https://res.cloudinary.com/dzxjg4vwg/image/upload/c_scale,h_820,w_1222/v1697026873/Screenshot_2023-10-11_at_13.20.37_miwvmr.png"
+                    alt="golf" class="img-fluid card-img-top">
+                <div class="card-body">
+                    {% for post in ballybunnion_posts %}
+                    <h4 class="card-title">{{ post.title }}</h4>
+                    <small class="text-muted">{{ post.author }}</small>
+                    <hr>
+                    <p class="card-text">{{ post.excerpt }}</p>
                     {% endfor %}
                 </div>
             </div>
@@ -36,28 +52,12 @@
                     src="https://res.cloudinary.com/dzxjg4vwg/image/upload/v1696331656/Screenshot_2023-10-03_at_12.13.52_pjcpjf.png"
                     alt="golf" class="img-fluid card-img-top">
                 <div class="card-body">
-                    <h4 class="card-title">Blog Post Two</h4>
-                    <small class="text-muted">Written by Philip on 18/07</small>
+                    {% for post in the_abbey_posts %}
+                    <h4 class="card-title">{{ post.title }}</h4>
+                    <small class="text-muted">{{ post.author }}</small>
                     <hr>
-                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Quod ipsa necessitatibus, deleniti debitis nostrum pariatur amet eos animi placeat
-                        corrupti modi quae voluptatum maiores cupiditate eveniet voluptatibus magni inventore
-                        laudantium!</p>
-                </div>
-            </div>
-
-            <div class="card" style="width: 25rem;">
-                <img class="card-img"
-                    src="https://res.cloudinary.com/dzxjg4vwg/image/upload/v1696331656/Screenshot_2023-10-03_at_12.13.52_pjcpjf.png"
-                    alt="golf" class="img-fluid card-img-top">
-                <div class="card-body">
-                    <h4 class="card-title">Blog Post Three</h4>
-                    <small class="text-muted">Written by Philip on 18/07</small>
-                    <hr>
-                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Quod ipsa necessitatibus, deleniti debitis nostrum pariatur amet eos animi placeat
-                        corrupti modi quae voluptatum maiores cupiditate eveniet voluptatibus magni inventore
-                        laudantium!</p>
+                    <p class="card-text">{{ post.excerpt }}</p>
+                    {% endfor %}
                 </div>
             </div>
         </div>
