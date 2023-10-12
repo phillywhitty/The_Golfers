@@ -15,6 +15,7 @@ class Post(models.Model):
     )
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES, default='The K Club')
     title = models.CharField(max_length=200, unique=True)
+    location = models.CharField(max_length=200, default='Unknown') 
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="blog_posts"

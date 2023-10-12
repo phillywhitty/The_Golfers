@@ -25,10 +25,12 @@
                     alt="golf" class="img-fluid card-img-top">
                 <div class="card-body">
                     {% for post in k_club_posts %}
-                    <h4 class="card-title">{{post.title}}</h4>
-                    <small class="text-muted">{{post.author}}</small>
+                    <h4 class="card-title">{{ post.title }}</h4>
+                    <small class="text-muted">{{ post.location }}</small>
+                    <br>
+                    <small class="text-muted">{{ post.author }}</small>
                     <hr>
-                    <p class="card-text">{{post.excerpt}}</p>
+                    <p class="card-text">{{ post.excerpt }}</p>
                     {% endfor %}
                 </div>
             </div>
@@ -40,6 +42,8 @@
                 <div class="card-body">
                     {% for post in ballybunnion_posts %}
                     <h4 class="card-title">{{ post.title }}</h4>
+                    <small class="text-muted">{{ post.location }}</small>
+                    <br>
                     <small class="text-muted">{{ post.author }}</small>
                     <hr>
                     <p class="card-text">{{ post.excerpt }}</p>
@@ -49,11 +53,13 @@
 
             <div class="card" style="width: 25rem;">
                 <img class="card-img"
-                    src="https://res.cloudinary.com/dzxjg4vwg/image/upload/v1696331656/Screenshot_2023-10-03_at_12.13.52_pjcpjf.png"
+                    src="https://res.cloudinary.com/dzxjg4vwg/image/upload/c_scale,h_821,w_1224/v1697106982/Screenshot_2023-10-12_at_11.35.28_a4ksqs.png"
                     alt="golf" class="img-fluid card-img-top">
                 <div class="card-body">
                     {% for post in the_abbey_posts %}
                     <h4 class="card-title">{{ post.title }}</h4>
+                    <small class="text-muted">{{ post.location }}</small>
+                    <br>
                     <small class="text-muted">{{ post.author }}</small>
                     <hr>
                     <p class="card-text">{{ post.excerpt }}</p>
