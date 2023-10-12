@@ -46,6 +46,7 @@ class PostList(generic.ListView):
         # Queryset for The Abbey blog posts
         context['the_abbey_posts'] = Post.objects.filter(status=True, category='The Abbey').order_by("-created_on")
 
+        
         return context
 
 

@@ -6,9 +6,8 @@
 <header id="page-header">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 m-auto text-center">
-                <h1>Read Our Blog</h1>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas, temporibus?</p>
+            <div class="col-md-6 m-auto text-center blog-title-text">
+                <h1 class="text-heading">Read Our Course Blogs</h1>
             </div>
         </div>
     </div>
@@ -26,9 +25,12 @@
                 <div class="card-body">
                     {% for post in k_club_posts %}
                     <h4 class="card-title">{{ post.title }}</h4>
-                    <small class="text-muted">{{ post.location }}</small>
-                    <br>
-                    <small class="text-muted">{{ post.author }}</small>
+                    <small class="text-muted">
+                        <p class="county-text"><strong>Based In County:</strong> {{ post.location }}</p>
+                    </small>
+                    <small class="text-muted">
+                        <p class="blog-author"><strong>Author:</strong> {{ post.author }}</p>
+                    </small>
                     <hr>
                     <p class="card-text">{{ post.excerpt }}</p>
                     {% endfor %}
@@ -42,9 +44,12 @@
                 <div class="card-body">
                     {% for post in ballybunnion_posts %}
                     <h4 class="card-title">{{ post.title }}</h4>
-                    <small class="text-muted">{{ post.location }}</small>
-                    <br>
-                    <small class="text-muted">{{ post.author }}</small>
+                    <small class="text-muted">
+                        <p class="county-text"><strong>Based In County:</strong> {{ post.location }}</p>
+                    </small>
+                    <small class="text-muted">
+                        <p class="blog-author"><strong>Author:</strong> {{ post.author }}</p>
+                    </small>
                     <hr>
                     <p class="card-text">{{ post.excerpt }}</p>
                     {% endfor %}
@@ -58,9 +63,12 @@
                 <div class="card-body">
                     {% for post in the_abbey_posts %}
                     <h4 class="card-title">{{ post.title }}</h4>
-                    <small class="text-muted">{{ post.location }}</small>
-                    <br>
-                    <small class="text-muted">{{ post.author }}</small>
+                    <small class="text-muted">
+                        <p class="county-text"><strong>Based In County:</strong> {{ post.location }}</p>
+                    </small>
+                    <small class="text-muted">
+                        <p class="blog-author"><strong>Author:</strong> {{ post.author }}</p>
+                    </small>
                     <hr>
                     <p class="card-text">{{ post.excerpt }}</p>
                     {% endfor %}

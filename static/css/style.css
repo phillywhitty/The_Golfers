@@ -29,6 +29,10 @@ body {
     background-repeat: no-repeat;
 }
 
+.text-heading {
+    color: #BACBE3;
+}
+
 .brand {
     font-family: sans-serif;
     font-size: 1.4rem;
@@ -119,6 +123,19 @@ body {
 .post-subtitle {
     margin-left: 5%;
     color: lightgray;
+}
+
+
+.blog-title-text {
+    color: #fff;
+}
+
+.county-text {
+    color: #BACBE3;
+}
+
+.blog-author {
+    color: #BACBE3;
 }
 
 .btn-signup {
