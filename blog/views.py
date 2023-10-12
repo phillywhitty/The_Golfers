@@ -15,6 +15,12 @@ def about(request):
     """
     return render(request, "about.html")
 
+def custom_login(request):
+    """
+    Render the login.html template
+    """
+    return render(request, "account/login.html")    
+
 
 
 def index(request):
@@ -24,6 +30,13 @@ def index(request):
     
     return render(request, "index.html", {})
 
+
+def custom_signin(request):
+    """
+    Render the signin.html template
+    """
+    
+    return render(request, "account/signin.html", {})
 
 
  
