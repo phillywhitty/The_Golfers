@@ -2,6 +2,9 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.views import generic, View
 from .models import Post
+from .forms import CommentForm
+
+
 
 def landing_page(request):
     """
@@ -79,6 +82,21 @@ class PostDetail(View):
             {
                 "post": post,
                 "comments": comments,
-                "liked": liked
+                "liked": liked,
+                "comment_form": CommentForm()
             },
         )
+
+
+from django.contrib.auth.decorators import login_required
+
+@login_required
+def post_comment(request, post_id):
+    post = get_object_or_404(Post, id=post_id)
+
+    if request.method == 'POST':
+        body = request.POST.get('body')
+        if body:
+            Comment.objects.create(post=post, user=request.user, body=body, approved=True)
+
+    return redirect('post_detail', post_id=post_id)

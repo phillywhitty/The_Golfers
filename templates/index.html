@@ -2,19 +2,10 @@
 
 {% block content %}
 
-<!-- PAGE HEADER -->
-<header id="page-header">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 m-auto text-center blog-title-text">
-                <h1 class="text-heading">Read Our Course Blogs</h1>
-            </div>
-        </div>
-    </div>
-</header>
 
 <!-- BLOG SECTION -->
 <section id="blog" class="py-3">
+    <h1 class="text-heading text-center">Read Our Course Blogs</h1>
     <div class="container">
         <div class="row">
 
@@ -33,6 +24,14 @@
                     </small>
                     <hr>
                     <p class="card-text">{{ post.excerpt }}</p>
+                    {% endfor %}
+                    {% for comment in post.comments.all %}
+                    <div class="comment">
+                        <p>{{ comment.body }}</p>
+                        <p>By: {{ comment.user.username }}</p>
+                    </div>
+                    {% empty %}
+                    <p>No comments yet.</p>
                     {% endfor %}
                 </div>
             </div>
@@ -53,6 +52,14 @@
                     <hr>
                     <p class="card-text">{{ post.excerpt }}</p>
                     {% endfor %}
+                    {% for comment in post.comments.all %}
+                    <div class="comment">
+                        <p>{{ comment.body }}</p>
+                        <p>By: {{ comment.user.username }}</p>
+                    </div>
+                    {% empty %}
+                    <p>No comments yet.</p>
+                    {% endfor %}
                 </div>
             </div>
 
@@ -72,7 +79,17 @@
                     <hr>
                     <p class="card-text">{{ post.excerpt }}</p>
                     {% endfor %}
+                    {% for comment in post.comments.all %}
+                    <div class="comment">
+                        <p>{{ comment.body }}</p>
+                        <p>By: {{ comment.user.username }}</p>
+                    </div>
+                    {% empty %}
+                    <p>No comments yet.</p>
+                    {% endfor %}
+
                 </div>
+
             </div>
         </div>
     </div>

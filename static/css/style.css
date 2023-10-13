@@ -9,7 +9,7 @@
 }
 
 .bg-clr-dom {
-    background-color: orchid !important;
+    background-color: #0b2b26 !important;
 }
 
 .bg-clr-dom-light {
@@ -108,6 +108,24 @@ body {
     left: -2px;
     background-color: #ffa300;
     ;
+}
+
+
+.navbar {
+    margin-bottom: 100px;
+}
+
+.login-text {
+    color: #fff;
+}
+
+.login-border {
+    border: 2px solid orange;
+    padding: 20px;
+}
+
+.welcome-login-text {
+    color: #23BBBB;
 }
 
 .author {
