@@ -31,12 +31,12 @@ def index(request):
     return render(request, "index.html", {})
 
 
-def custom_signin(request):
-    """
-    Render the signin.html template
-    """
+# def custom_signin(request):
+#     """
+#     Render the signin.html template
+#     """
     
-    return render(request, "account/signin.html", {})
+#     return render(request, "account/signin.html", {})
 
 
  
