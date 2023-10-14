@@ -34,15 +34,6 @@ def index(request):
     return render(request, "index.html", {})
 
 
-def custom_signup(request):
-    """
-    Render the signup.html template
-    """
-    
-    return render(request, "account/signup.html", {})
-
-
- 
 class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by("-created_on")

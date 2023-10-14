@@ -30,7 +30,7 @@ body {
 }
 
 .text-heading {
-    color: #BACBE3;
+    color: orange;
 }
 
 .brand {
@@ -123,7 +123,7 @@ body {
 /* Login Page */
 
 .login-text {
-    color: #fff;
+    color: orange;
 }
 
 .login-border {
@@ -150,7 +150,28 @@ body {
     color: #ffa300;
 }
 
-.sign-up-text {
+.sign-up-text-link {
+    color: #ffa300;
+}
+
+
+/* Sign-Up Page */
+
+.signup-text {
+    color: orange;
+}
+
+.welcome-signup-text {
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.input-field-signup {
+    color: #fff;
+    padding-bottom: 5px;
+}
+
+.login-text-link {
     color: #ffa300;
 }
 
