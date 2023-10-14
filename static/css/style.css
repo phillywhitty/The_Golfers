@@ -81,9 +81,14 @@ body {
     border-radius: 5%;
 }
 
+.card-body-about {
+    border: 5px solid #ffa300;
+    border-radius: 5%;
+}
+
 .about-img {
 
-    border: 5px solid #ffa300;
+    border: 5px solid white;
     border-radius: 5%;
 
 }
