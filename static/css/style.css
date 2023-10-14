@@ -120,17 +120,38 @@ body {
     margin-bottom: 100px;
 }
 
+/* Login Page */
+
 .login-text {
     color: #fff;
 }
 
 .login-border {
     border: 2px solid orange;
+    border-radius: 5%;
     padding: 20px;
 }
 
+.custom-narrow-container {
+    max-width: 700px;
+    background-color: #0f483f;
+}
+
+.h-line {
+    color: #BACBE3;
+}
+
 .welcome-login-text {
-    color: #23BBBB;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.input-field-login {
+    color: #ffa300;
+}
+
+.sign-up-text {
+    color: #ffa300;
 }
 
 .author {
