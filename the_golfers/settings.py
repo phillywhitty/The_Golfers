@@ -30,7 +30,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-phillywhitty-thegolfers-32sxaj4omfe.ws-eu105.gitpod.io', 'localhost']
+ALLOWED_HOSTS = ['8000-phillywhitty-thegolfers-n5lal0zn8bq.ws-eu106.gitpod.io', 'localhost',  'the-golfers-blog-ed907c4b0918.herokuapp.com']
+
+CSRF_TRUSTED_ORIGINS = ["https://8000-phillywhitty-thegolfers-n5lal0zn8bq.ws-eu106.gitpod.io"]
 
 
 # Application definition
@@ -97,11 +99,15 @@ WSGI_APPLICATION = 'the_golfers.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
 

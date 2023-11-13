@@ -7,15 +7,7 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 
 class Post(models.Model):
-     
-    CATEGORY_CHOICES = (
-        ('The K Club', 'The K Club'),
-        ('Ballybunnion', 'Ballybunnion'),
-        ('The Abbey', 'The Abbey'),
-    )
-    category = models.CharField(max_length=20, choices=CATEGORY_CHOICES, default='Unknown')
     title = models.CharField(max_length=200, unique=True)
-    location = models.CharField(max_length=200, default='Unknown') 
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="blog_posts"
@@ -42,8 +34,8 @@ class Post(models.Model):
 class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE,
                              related_name="comments")
-    name = models.CharField(max_length=80)
-    email = models.EmailField()
+    name = models.CharField(max_length=80, default=False)
+    email = models.EmailField(default=False)
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
