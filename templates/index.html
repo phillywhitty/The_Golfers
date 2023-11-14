@@ -31,12 +31,14 @@
                         <p>By: {{ comment.user.username }}</p>
                     </div>
                     {% empty %}
-                    <h2>The K Club</h2>
-                    <h3>Straffan County Kildare</h3>
-                    <p>The K Club offers a unique golfing experience with two parkland courses designed by Arnold
-                        Palmer, the only 36-hole Palmer-designed destination in Europe. Both courses have received
-                        significant upgrades. Proudly hosting the 2006 Ryder Cup, our golf team looks forward to the
-                        future with a trailblazing attitude on our 550-acre resort.</p>
+                    <a href="{% url 'k_club' %}">
+                        <h2>The K Club</h2>
+                        <h3>County Kildare</h3>
+                        <p>The K Club offers a unique golfing experience with two parkland courses designed by Arnold
+                            Palmer, the only 36-hole Palmer-designed destination in Europe. Both courses have received
+                            significant upgrades. Proudly hosting the 2006 Ryder Cup, our golf team looks forward to the
+                            future with a trailblazing attitude on our 550-acre resort.</p>
+                    </a>
                     {% endfor %}
                 </div>
             </div>
@@ -64,7 +66,7 @@
                     </div>
                     {% empty %}
                     <h2>Ballybunnion</h2>
-                    <h3>Ballybunnion County Kerry</h3>
+                    <h3>County Kerry</h3>
                     <p>Located on the north-west coast of County Kerry, on a beautiful stretch of sand dunes overlooking
                         the Atlantic Ocean, you’ll find two wonderfully challenging and unique world-class links golf
                         courses at Ballybunion – the Old Course and the Trent Jones Cashen Course. Whatever your choice,
@@ -96,7 +98,7 @@
                     </div>
                     {% empty %}
                     <h2>Trump International</h2>
-                    <h3>Doonbeg County Clare</h3>
+                    <h3>County Clare</h3>
                     <p>Trump International Golf Links Doonbeg features a stunning Dr. Martin Hawtree-designed course
                         along a 1.5-mile crescent-shaped beach. Enjoy Atlantic views on 16 of 18 holes in this par-72
                         layout spanning 7,026 yards. The round typically takes four and a half hours. The course,

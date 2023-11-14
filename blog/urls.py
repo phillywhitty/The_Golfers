@@ -9,5 +9,5 @@ urlpatterns = [
      # path('login/', account.views.LoginView.as_view(), name='custom_login'),
      path('signin/', views.custom_login, name='custom_signin'),
      path("post_list/", views.PostList.as_view(), name="index"),
-     path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail')
+     path('k_club', views.k_club, name='k_club'),
 ]

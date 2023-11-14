@@ -24,7 +24,8 @@ def custom_login(request):
     """
     return render(request, "account/login.html")    
 
-
+def k_club(request):
+    return render(request, 'k_club.html')
 
 def index(request):
     """
@@ -69,7 +70,7 @@ class PostDetail(View):
 
         return render(
             request,
-            "index.html",
+            "post_detail.html",
             {
                 "post": post,
                 "comments": comments,
