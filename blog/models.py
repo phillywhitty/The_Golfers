@@ -7,6 +7,13 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 
 class Post(models.Model):
+    
+    CATEGORY_CHOICES = (
+        ('The K Club', 'The K Club'),
+        ('Ballybunnion', 'Ballybunnion'),
+        ('The Abbey', 'The Abbey'),
+    )
+    category = models.CharField(max_length=20, choices=CATEGORY_CHOICES, default='Unknown')
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(
