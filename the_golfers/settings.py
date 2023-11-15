@@ -28,7 +28,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEBUG' in os.environ
+DEBUG = False
 
 ALLOWED_HOSTS = ['8000-phillywhitty-thegolfers-n5lal0zn8bq.ws-eu106.gitpod.io', 'localhost',  'the-golfers-blog-ed907c4b0918.herokuapp.com']
 
