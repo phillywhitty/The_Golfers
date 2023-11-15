@@ -42,20 +42,12 @@ class PostList(generic.ListView):
     paginate_by = 6
     context_object_name = 'post_list'
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-
-        # Queryset for The K Club blog posts
-        context['k_club_posts'] = Post.objects.filter(status=True, category='The K Club').order_by("-created_on")
-
-        # Queryset for Ballybunnion blog posts
-        context['ballybunnion_posts'] = Post.objects.filter(status=True, category='Ballybunnion').order_by("-created_on")
-
-        # Queryset for The Abbey blog posts
-        context['the_abbey_posts'] = Post.objects.filter(status=True, category='The Abbey').order_by("-created_on")
-
-        
-        return context
+class KClubPosts(generic.ListView):
+    model = Post
+    queryset = Post.objects.filter(status=1).order_by("-created_on")
+    template_name = "k_club.html"
+    paginate_by = 6
+    context_object_name = 'k_club_posts'
 
 
 class PostDetail(View):
