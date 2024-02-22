@@ -4,8 +4,8 @@ from allauth import account
 from .views import KClubPosts
 
 urlpatterns = [
-     path('', views.landing_page, name='landing_page'),
-     path('home', views.landing_page, name='home'),
+     path('', views.home, name='home'),
+     path("post_list/", views.PostList.as_view(), name="index"),
      path("about/", views.about, name="about"),
      path('signin/', views.custom_login, name='custom_signin'),
      path("post_list/", views.PostList.as_view(), name="index"),

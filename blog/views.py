@@ -6,11 +6,18 @@ from .forms import CommentForm
 
 
 
-def landing_page(request):
+def home(request):
     """
-    Render the landing_page.html template
+    Render the home.html template
     """
-    return render(request, "landing_page.html")
+    return render(request, "home.html")
+
+def blog(request):
+    """
+    Render the blog.html template
+    """
+    
+    return render(request, "blog.html")
 
 def about(request):
     """
@@ -27,18 +34,11 @@ def custom_login(request):
 def k_club(request):
     return render(request, 'k_club.html')
 
-def index(request):
-    """
-    Render the index.html template
-    """
-    
-    return render(request, "index.html", {})
-
 
 class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by("-created_on")
-    template_name = "index.html"
+    template_name = "blog.html"
     paginate_by = 6
     context_object_name = 'post_list'
 
