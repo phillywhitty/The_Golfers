@@ -1,5 +1,5 @@
-from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse
+from django.shortcuts import render, redirect, get_object_or_404, reverse
+from django.http import HttpResponseRedirect
 from django.views import generic, View
 from .models import Post
 from .forms import CommentForm
@@ -17,13 +17,13 @@ def blog(request):
     Render the blog.html template
     """
     
-    return render(request, "blog.html")
+    return render(request, "blog/blog.html")
 
 def about(request):
     """
     Render the about.html template
     """
-    return render(request, "about.html")
+    return render(request, "blog/about.html")
 
 def custom_login(request):
     """
@@ -32,7 +32,7 @@ def custom_login(request):
     return render(request, "account/login.html")    
 
 def k_club(request):
-    return render(request, 'k_club.html')
+    return render(request, 'blog/k_club.html')
 
 
 class PostList(generic.ListView):
