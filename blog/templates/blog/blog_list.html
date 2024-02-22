@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container-fluid mt-5">
+
+    <div class="row">
+
+        <div class="col-lg-6 col-md-10 bg-white m-auto mb-5">
+
+            <div class="text-center">
+
+                <h2> <strong> <u>Golfing Blogs</u></strong></h2>
+                <small><strong>Feel free to share a golfcourse that you reccomend! </strong></small>
+
+            </div>
+
+            <br><br>
+
+            <div class="row">
+                {% for blog in blog_list%}
+                <div class="col-lg-4">
+
+                    <div class="post-entry-1 border-bottom">
+
+                        {% if "placeholder" in blog.featured_image.url %}
+                        <a href="#"><img src="" class="img-fluid"></a>
+                        {% else %}
+                        <a href="#"><img src="" alt="" class="img-fluid"></a>
+                        {% endif %}
+
+                        <div class="post-meta"><span class="date"></span> <span class="mx-1">&bullet;</span>
+                            <span>{{blog.created_on}}</span>
+                        </div>
+                        <h2 class="mb-2"><a href="">{{blog.title}}</a>
+                        </h2>
+                        <span class="author mb-3 d-block">{{blog.author}}</span>
+                        <p class="mb-4 d-block">{{blog.excerpt}}</p>
+                        <p class="p-1"><i class="fa-solid fa-heart"></i>&nbsp;{{ blog.number_of_likes}} &nbsp; <i
+                                class="fa fa-comment" aria-hidden="true"></i> &nbsp;{{blog.comments.count}}
+                        </p>
+                        <a href="{% url 'blog_details' blog_id=blog.id  %}" class="btn val-colour text-white">Read More
+                            &rarr;</a>
+                    </div>
+
+                </div>
+                {% endfor %}
+
+                <div class="text-center mb-4">
+                    <a href="{% url 'post_blog' %}" class="btn btn-lg val-colour p-3 text-white">Share your favourite
+                        course here !</a>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

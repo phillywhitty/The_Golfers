@@ -1,117 +1,46 @@
 {% extends "base.html" %}
 
+{% load static %}
+
+{% load crispy_forms_tags %}
+
 {% block content %}
 
+<div class="container-fluid mt-5">
 
-<!-- BLOG SECTION -->
-<section id="blog" class="py-3">
-    <h1 class="text-heading text-center">Read Our Course Blogs</h1>
-    <div class="container">
-        <div class="row">
+    <div class="row">
 
-            <div class="card" style="width: 25rem;">
-                <img class="card-img"
-                    src="https://res.cloudinary.com/dzxjg4vwg/image/upload/c_scale,h_821,w_1224/v1697025782/Screenshot_2023-10-11_at_12.58.21_na0n0n.png"
-                    alt="golf" class="img-fluid card-img-top">
-                <div class="card-body">
-                    {% for post in k_club_posts %}
-                    <h4 class="card-title">{{ post.title }}</h4>
-                    <small class="text-muted">
-                        <p class="county-text"><strong>Based In County:</strong> {{ post.location }}</p>
-                    </small>
-                    <small class="text-muted">
-                        <p class="blog-author"><strong>Author:</strong> {{ post.author }}</p>
-                    </small>
-                    <hr>
-                    <p class="card-text">{{ post.excerpt }}</p>
-                    {% endfor %}
-                    {% for comment in post.comments.all %}
-                    <div class="comment">
-                        <p>{{ comment.body }}</p>
-                        <p>By: {{ comment.user.username }}</p>
-                    </div>
-                    {% empty %}
-                    <a href="{% url 'k_club' %}">
-                        <h2>The K Club</h2>
-                        <h3>County Kildare</h3>
-                        <p>The K Club offers a unique golfing experience with two parkland courses designed by Arnold
-                            Palmer, the only 36-hole Palmer-designed destination in Europe. Both courses have received
-                            significant upgrades. Proudly hosting the 2006 Ryder Cup, our golf team looks forward to the
-                            future with a trailblazing attitude on our 550-acre resort.</p>
-                    </a>
-                    {% endfor %}
-                </div>
-            </div>
+        <div class="col-lg-6 col-md-10 bg-white m-auto mb-5">
 
-            <div class="card" style="width: 25rem;">
-                <img class="card-img"
-                    src="https://res.cloudinary.com/dzxjg4vwg/image/upload/c_scale,h_820,w_1222/v1697026873/Screenshot_2023-10-11_at_13.20.37_miwvmr.png"
-                    alt="golf" class="img-fluid card-img-top">
-                <div class="card-body">
-                    {% for post in ballybunnion_posts %}
-                    <h4 class="card-title">{{ post.title }}</h4>
-                    <small class="text-muted">
-                        <p class="county-text"><strong>Based In County:</strong> {{ post.location }}</p>
-                    </small>
-                    <small class="text-muted">
-                        <p class="blog-author"><strong>Author:</strong> {{ post.author }}</p>
-                    </small>
-                    <hr>
-                    <p class="card-text">{{ post.excerpt }}</p>
-                    {% endfor %}
-                    {% for comment in post.comments.all %}
-                    <div class="comment">
-                        <p>{{ comment.body }}</p>
-                        <p>By: {{ comment.user.username }}</p>
-                    </div>
-                    {% empty %}
-                    <h2>Ballybunnion</h2>
-                    <h3>County Kerry</h3>
-                    <p>Located on the north-west coast of County Kerry, on a beautiful stretch of sand dunes overlooking
-                        the Atlantic Ocean, you’ll find two wonderfully challenging and unique world-class links golf
-                        courses at Ballybunion – the Old Course and the Trent Jones Cashen Course. Whatever your choice,
-                        every hole, every hazard and every shot is defined by nature’s infinite presence.</p>
-                    {% endfor %}
-                </div>
-            </div>
+            <div class="text-center">
 
-            <div class="card" style="width: 25rem;">
-                <img class="card-img"
-                    src="https://res.cloudinary.com/dzxjg4vwg/image/upload/c_scale,h_821,w_1224/v1697106982/Screenshot_2023-10-12_at_11.35.28_a4ksqs.png"
-                    alt="golf" class="img-fluid card-img-top">
-                <div class="card-body">
-                    {% for post in the_abbey_posts %}
-                    <h4 class="card-title">{{ post.title }}</h4>
-                    <small class="text-muted">
-                        <p class="county-text"><strong>Based In County:</strong> {{ post.location }}</p>
-                    </small>
-                    <small class="text-muted">
-                        <p class="blog-author"><strong>Author:</strong> {{ post.author }}</p>
-                    </small>
-                    <hr>
-                    <p class="card-text">{{ post.excerpt }}</p>
-                    {% endfor %}
-                    {% for comment in post.comments.all %}
-                    <div class="comment">
-                        <p>{{ comment.body }}</p>
-                        <p>By: {{ comment.user.username }}</p>
-                    </div>
-                    {% empty %}
-                    <h2>Trump International</h2>
-                    <h3>County Clare</h3>
-                    <p>Trump International Golf Links Doonbeg features a stunning Dr. Martin Hawtree-designed course
-                        along a 1.5-mile crescent-shaped beach. Enjoy Atlantic views on 16 of 18 holes in this par-72
-                        layout spanning 7,026 yards. The round typically takes four and a half hours. The course,
-                        following Norman's 'least disturbance' philosophy, weaves naturally through sand dunes, offering
-                        a unique mix of five par 3s and five par 5s</p>
-                    {% endfor %}
-
-                </div>
+                <h2> <strong> <u>Add Golfcourse</u></strong></h2>
+                <small><strong>Share your favourite golfcourse through our blog! </strong></small>
 
             </div>
+
+            <br><br>
+
+            <form method="POST" autocomplete="off" class="m-auto">
+                {% csrf_token %}
+
+                {{ form|crispy}}
+
+                <br>
+                <button type="submit" class="btn val-colour text-white">&nbsp; Post blog </button>
+
+                <br><br>
+
+            </form>
+
+            <div class="text-center mb-auto">
+                <a href="{% url 'blog_list' %}" class="btn val-colour text-white">View other golf course blogs</a>
+
+            </div>
+
         </div>
     </div>
-    </div>
-</section>
 
-{%endblock%}
+</div>
+
+{% endblock %}

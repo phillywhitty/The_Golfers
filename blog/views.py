@@ -1,86 +1,142 @@
 from django.shortcuts import render, redirect, get_object_or_404, reverse
-from django.http import HttpResponseRedirect
 from django.views import generic, View
-from .models import Post
-from .forms import CommentForm
+from django.http import HttpResponseRedirect
+from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin
+from . forms import BlogForm, CommentForm
+from . models import Blog, Comment
 
 
 
-def home(request):
-    """
-    Render the home.html template
-    """
-    return render(request, "home.html")
 
-def blog(request):
-    """
-    Render the blog.html template
-    """
-    
-    return render(request, "blog/blog.html")
+def post_blog(request):
+    """ This function renders the blog form"""
 
-def about(request):
-    """
-    Render the about.html template
-    """
-    return render(request, "blog/about.html")
+    if not request.user.is_authenticated:
 
-def custom_login(request):
-    """
-    Render the login.html template
-    """
-    return render(request, "account/login.html")    
+        messages.error(request, 'Sorry, you need to be logged in.')
 
-def k_club(request):
-    return render(request, 'blog/k_club.html')
+        return redirect(reverse('account_login'))
 
-
-class PostList(generic.ListView):
-    model = Post
-    queryset = Post.objects.filter(status=1).order_by("-created_on")
-    template_name = "blog.html"
-    paginate_by = 6
-    context_object_name = 'post_list'
-
-class KClubPosts(generic.ListView):
-    model = Post
-    queryset = Post.objects.filter(status=1).order_by("-created_on")
-    template_name = "k_club.html"
-    paginate_by = 6
-    context_object_name = 'k_club_posts'
-
-
-class PostDetail(View):
-
-    def get(self, request, slug, *args, **kwargs):
-        queryset = Post.objects.filter(status=1)
-        post = get_object_or_404(queryset, slug=slug)
-        comments = post.comments.filter(approved=True).order_by("-created_on")
-        liked = False
-        if post.likes.filter(id=self.request.user.id).exists():
-            liked = True
-
-        return render(
-            request,
-            "post_detail.html",
-            {
-                "post": post,
-                "comments": comments,
-                "liked": liked,
-                "comment_form": CommentForm()
-            },
-        )
-
-
-from django.contrib.auth.decorators import login_required
-
-@login_required
-def post_comment(request, post_id):
-    post = get_object_or_404(Post, id=post_id)
+    form = BlogForm()
 
     if request.method == 'POST':
-        body = request.POST.get('body')
-        if body:
-            Comment.objects.create(post=post, user=request.user, body=body, approved=True)
+        form = BlogForm(request.POST)
 
-    return redirect('post_detail', post_id=post_id)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Blog posted successfully, waiting for approval")
+            return redirect(reverse('blog_list'))
+        else:
+            messages.error(request, "An error occured! Please check your form is valid.")
+    else:
+        form = BlogForm()
+    context = {
+        'form': form
+    }
+    return render(request, 'blog/blog.html', context)
+
+
+def post_comment(request, blog_id):
+    """ This function renders the comment form"""
+
+    queryset = Blog.objects.filter(status=1)
+    blog = get_object_or_404(queryset, pk=blog_id)
+    comments = blog.comments.filter(approved=True).order_by("-created_on")
+
+    if request.method == 'POST':
+        comment_form = CommentForm(request.POST)
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.blog = blog
+            comment.save()
+            messages.success(request, 'Your comment has been uploaded for approval.')
+            return redirect(reverse('blog_details', args=[blog_id]))
+        else:
+            messages.error(request, "An error occured! Please check your form is valid.")
+    else:
+        comment_form = CommentForm()
+
+    context = {
+        "blog": blog,
+        "comments": comments,
+        "commented": True,
+        "comment_form": comment_form
+    }
+
+    return render(request, "blog/blog_detail.html", context)
+
+
+class BlogList(generic.ListView):
+    model = Blog
+    queryset = Blog.objects.filter(status=1).order_by("-created_on")
+    template_name = "blog_list.html"
+    paginate_by = 6
+
+
+def blog_details(request, blog_id):
+
+    blog = get_object_or_404(Blog, pk=blog_id)
+    liked = False
+    if blog.likes.filter(id=request.user.id).exists():
+        liked = True
+    comments = blog.comments.filter(approved=True).order_by("-created_on")
+
+    context = {
+        'blog': blog,
+        'liked': liked,
+        'comments': comments
+    }
+
+    return render(request, 'blog/blog_detail.html', context)
+
+
+class BlogLike(LoginRequiredMixin, View):
+
+    def post(self, request, blog_id):
+        blog = get_object_or_404(Blog, pk=blog_id)
+
+        if blog.likes.filter(id=request.user.id).exists():
+            blog.likes.remove(request.user)
+        else:
+            blog.likes.add(request.user)
+
+        return HttpResponseRedirect(reverse('blog_details', args=[blog_id]))
+
+
+def edit_comment(request, comment_id):
+
+    if not request.user.is_authenticated:
+
+        messages.error(request, 'Sorry, you need to be logged in.')
+
+        return redirect(reverse('account_login'))
+
+    comment = get_object_or_404(Comment, pk=comment_id)
+    if request.method == 'POST':
+        form = CommentForm(request.POST, request.FILES, instance=comment)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Edit comment successfully.")
+            return redirect(reverse('blog_list'))
+        else:
+            messages.error(request, "An error occured! Please check your form is valid.")
+
+    else:
+        form = CommentForm(instance=comment)
+    context = {
+        'form': form,
+    }
+    return render(request, 'blog/edit_comment.html', context)
+
+
+def delete_comment(request, comment_id):
+    if not request.user.is_authenticated:
+
+        messages.error(request, 'Sorry, you need to be logged in.')
+
+        return redirect(reverse('account_login'))
+    comment = get_object_or_404(Comment, pk=comment_id)
+    comment.delete()
+    messages.success(request, "Comment deleted successfully")
+    return redirect(reverse('blog_list'))
