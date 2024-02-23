@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary',
     'crispy_forms',
+    'crispy_bootstrap5',
     'django_summernote',
     'blog',
     'home',
@@ -58,7 +59,10 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'the_golfers.urls'
-CRISPY_TEMPLATE_PACK = 'bootstrap5'
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 TEMPLATES = [
     {

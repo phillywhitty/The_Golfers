@@ -8,6 +8,10 @@ from . models import Blog, Comment
 
 
 
+def about(request):
+    return render(request, 'blog/about.html')
+
+
 
 def post_blog(request):
     """ This function renders the blog form"""
