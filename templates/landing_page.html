@@ -2,7 +2,7 @@
 
 {% load static %}
 
-{% block title %} The Golfers {% endblock %}
+{% block title %} The Golfers - Greetings {% endblock %}
 
 {% block content %}
 <!-- Header-->
@@ -20,8 +20,7 @@
                             lead by discovering the premier golf courses</span></h1>
                     <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
                         <a class="btn rounded-pill btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder join-now-bg join-now-text"
-                            href="#">Join
-                            Now</a>
+                            href="{% url 'account_signup' %}">Sign Up</a>
                     </div>
                 </div>
             </div>
