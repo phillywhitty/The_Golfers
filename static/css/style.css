@@ -108,6 +108,13 @@ body {
     color: white;
 }
 
+.join-now:hover,
+.join-now:active {
+    background-color: #fff;
+    color: #ffa300 !important;
+    ;
+}
+
 .image-container {
     position: relative;
 }
@@ -158,6 +165,10 @@ body {
 
 .sign-up-text-link {
     color: #ffa300;
+}
+
+.forgot-password-text {
+    color: #fff !important;
 }
 
 
@@ -211,7 +222,7 @@ body {
 
 .btn-signup {
     background-color: #ffa300;
-    color: #fff;
+    color: #fff !important;
 }
 
 .sign-up-bg {
@@ -229,7 +240,7 @@ body {
 .btn-signup:hover,
 .btn-signup:active {
     background-color: #fff;
-    color: #ffa300;
+    color: #ffa300 !important;
     ;
 }
 

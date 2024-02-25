@@ -8,13 +8,12 @@
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
 {% block content %}
-<div class="container mt-5 login-border custom-narrow-container" style="max-width: 700px;">
+<div class="container mt-3 mb-5 login-border custom-narrow-container" style="max-width: 700px;">
   <div class=" container-fluid row">
     <div class="col-md-8 mt-3 offset-md-2">
       <h3 class="display-4 login-text pb-2 text-center">{% trans "Sign Up" %}</h3>
       <hr class="h-line my-4">
-      <p class="welcome-login-text pb-2 text-center">Create an account
-        <br>
+      <p class="welcome-login-text text-center">Create An Account
       </p>
     </div>
   </div>
@@ -22,33 +21,32 @@
     <div class="col-md-8 mt-3 offset-md-2">
       <form>
         {% csrf_token %}
-        <div class="form-outline mb-4">
+        <div class="form-outline mb-3">
           <input type="text" id="form3Example1cg" class="form-control form-control-lg" />
           <label class="form-label text-white" for="form3Example1cg">Your Name</label>
         </div>
 
-        <div class="form-outline mb-4">
+        <div class="form-outline mb-3">
           <input type="email" id="form3Example3cg" class="form-control form-control-lg" />
           <label class="form-label text-white" for="form3Example3cg">Your Email</label>
         </div>
 
-        <div class="form-outline mb-4">
+        <div class="form-outline mb-3">
           <input type="password" id="form3Example4cg" class="form-control form-control-lg" />
           <label class="form-label text-white" for="form3Example4cg">Password</label>
         </div>
 
-        <div class="form-outline mb-4">
+        <div class="form-outline mb-3">
           <input type="password" id="form3Example4cdg" class="form-control form-control-lg" />
           <label class="form-label text-white" for="form3Example4cdg">Repeat your password</label>
         </div>
 
         <div class="d-flex justify-content-center">
-          <button type="button" class="btn btn-success btn-block btn-lg text-body text-white">Register</button>
+          <button type="submit" class="btn btn-signup">Register</button>
         </div>
 
-        <p class="text-center text-muted mt-2 mb-0">Already have an account ? <a href="{% url 'account_login' %}"
-            class="fw-bold text-body"><u>Login here</u></a></p>
-
+        <p class="text-center text-muted mt-2 mb-0 pr-2">Already have an account ? <a href="{% url 'account_login' %}"
+            class="fw-bold text-white"><u class="m-1">Login here</u></a></p>
       </form>
     </div>
   </div>
