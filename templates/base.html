@@ -38,7 +38,7 @@
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
             {% if user.is_authenticated %}
-            <a class="navbar-brand text-white mx-auto fw-bolder" href="{% url 'index' %}">The Golfers &middot; Blog</a>
+            <a class="navbar-brand text-white mx-auto fw-bolder" href="{% url 'index' %}">The Golfers Blog</a>
             <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon bg-white"></span>
@@ -50,7 +50,7 @@
                     </li>
                     {% else %}
                     <a class="navbar-brand text-white mx-5 fw-bolder" href="{% url 'landing_page' %}">The Golfers
-                        &middot; Blog</a>
+                        Blog</a>
                     <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false"
                         aria-label="Toggle navigation">
