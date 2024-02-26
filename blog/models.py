@@ -4,41 +4,23 @@ from cloudinary.models import CloudinaryField
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
-class Post(models.Model):
+# models.py
 
-    title = models.CharField(max_length=200, unique=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE,
-    related_name="blog_post", null=True)
-    updated_on = models.DateTimeField(auto_now=True)
-    created_on = models.DateTimeField(auto_now_add=True)
-    content = models.TextField()
-    featured_image = CloudinaryField('image', default='placeholder')
-    status = models.IntegerField(choices=STATUS, default=0)
-    likes = models.ManyToManyField(User, related_name="blog_likes", blank=True)
-    excerpt = models.TextField(blank=True)
 
-    class Meta:
-        ordering = ['-created_on']
-    
-    def __str__(self):
-        return self.title
-
-    def number_of_likes(self):
-        return self.likes.count()
+class GolfCourse(models.Model):
+    name = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='golf_course_images')
 
 
 class Comment(models.Model):
-
-    blog = models.ForeignKey(
-    Blog, on_delete=models.CASCADE, related_name='comments')
-    name = models.CharField(max_length=80)
-    email = models.EmailField()
-    body = models.TextField()
-    created_on = models.DateTimeField(auto_now_add=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    golf_course = models.ForeignKey(GolfCourse, on_delete=models.CASCADE, related_name='comments')
+    text = models.TextField(default=False)
+    date_published = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
 
-    class Meta:
-        ordering = ['created_on']
+    # Provide a default value for existing rows when adding a non-nullable field
+    @classmethod
+    def default_golf_course(cls):
+        return GolfCourse.objects.first(default=False)  # Change this default as per your requirements
 
-    def __str__(self):
-        return f"Comment {self.body} by {self.name}"
