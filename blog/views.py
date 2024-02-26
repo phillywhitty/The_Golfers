@@ -25,5 +25,20 @@ def index(request):
     """
     return render(request, "index.html")
 
+def ballybunnion_blog(request):
+    """
+    Render the ballybunnion.html template
+    """
+    return render(request, "ballybunnion_blog.html")
 
+def doonbeg_blog(request):
+    """
+    Render the doonbeg.html template
+    """
+    return render(request, "doonbeg_blog.html")
 
+def k_club_blog(request):
+    """
+    Render the k_club.html template
+    """
+    return render(request, "k_club_blog.html")
