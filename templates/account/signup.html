@@ -8,47 +8,26 @@
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
 {% block content %}
-<div class="container mt-3 mb-5 login-border custom-narrow-container" style="max-width: 700px;">
-  <div class=" container-fluid row">
-    <div class="col-md-8 mt-3 offset-md-2">
-      <h3 class="display-4 login-text pb-2 text-center">{% trans "Sign Up" %}</h3>
-      <hr class="h-line my-4">
-      <p class="welcome-login-text text-center">Create An Account
-      </p>
-    </div>
+<div class="container form-container p-3 my-3 login-border custom-narrow-container">
+  <div class="text-center">
+    <h3 class="display-4 login-text pb-2 text-center">{% trans "Sign Up" %}</h3>
+    <hr class="h-line my-4">
+    <p class="welcome-login-text">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}"
+        class="sign-in-text">Sign
+        In</a>{% endblocktrans %}</p>
   </div>
-  <div class="container-fluid row">
-    <div class="col-md-8 mt-3 offset-md-2">
-      <form>
-        {% csrf_token %}
-        <div class="form-outline mb-3">
-          <input type="text" id="form3Example1cg" class="form-control form-control-lg" />
-          <label class="form-label text-white" for="form3Example1cg">Your Name</label>
-        </div>
-
-        <div class="form-outline mb-3">
-          <input type="email" id="form3Example3cg" class="form-control form-control-lg" />
-          <label class="form-label text-white" for="form3Example3cg">Your Email</label>
-        </div>
-
-        <div class="form-outline mb-3">
-          <input type="password" id="form3Example4cg" class="form-control form-control-lg" />
-          <label class="form-label text-white" for="form3Example4cg">Password</label>
-        </div>
-
-        <div class="form-outline mb-3">
-          <input type="password" id="form3Example4cdg" class="form-control form-control-lg" />
-          <label class="form-label text-white" for="form3Example4cdg">Repeat your password</label>
-        </div>
-
-        <div class="d-flex justify-content-center">
-          <button type="submit" class="btn btn-signup">Register</button>
-        </div>
-
-        <p class="text-center text-muted mt-2 mb-0 pr-2">Already have an account ? <a href="{% url 'account_login' %}"
-            class="fw-bold text-white"><u class="m-1">Login here</u></a></p>
-      </form>
+  <!-- Sign Up form -->
+  <form id="signup_form" method="post" action="{% url 'account_signup' %}">
+    <!-- Security token from django against attackers -->
+    {% csrf_token %}
+    {{ form | crispy }}
+    {% if redirect_field_value %}
+    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+    {% endif %}
+    <div class="text-center">
+      <button type="submit" class="btn btn-signup">{% trans "Sign Up" %}</button>
     </div>
-  </div>
+  </form>
+</div>
 </div>
 {% endblock %}
