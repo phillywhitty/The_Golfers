@@ -83,7 +83,7 @@ body {
 
 .card-body-about {
     border: 5px solid #ffa300;
-    border-radius: 5%;
+    border-radius: 1%;
 }
 
 
@@ -189,8 +189,8 @@ body {
 
 .login-border {
     border: 2px solid orange;
-    border-radius: 5%;
-    padding: 20px;
+    border-radius: 1%;
+    padding: 10px;
 }
 
 .custom-narrow-container {
