@@ -1,11 +1,10 @@
 from django.forms import ModelForm
 from django.contrib.auth.models import User
-from django import forms
-from . models import Comment
+from . models import GolfCourse, Comment
 
 
-class CommentForm(forms.ModelForm):
+class CreateBlogForm(ModelForm):
     class Meta:
-        model = Comment
-        fields = ['text']
-
+        model = GolfCourse
+        fields = ['course_name', 'location', 'content',]
+        exclude = ['user',]

@@ -97,7 +97,7 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 LOGIN_URL = '/accounts/login/'
-LOGIN_REDIRECT_URL = '/index/'
+LOGIN_REDIRECT_URL = '/blog_index/'
 LOGOUT_REDIRECT_URL = '/'
 
 

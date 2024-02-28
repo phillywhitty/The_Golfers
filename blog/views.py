@@ -1,67 +1,77 @@
 from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from .models import GolfCourse, Comment
-from .forms import CommentForm
+from django.contrib.auth.decorators import login_required
+from . forms import CreateBlogForm
+from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib import messages
+
 
 
 
 # ==============================
 # View functions
 # ==============================
+
+# Render the landing_page
+
 def landing_page(request):
-    """
-    Render the landing_page.html template
-    """
+
     return render(request, "landing_page.html")
 
+# Render the about page
+
 def about(request):
-    """
-    Render the about.html template
-    """
+
     return render(request, "about.html")
 
-def index(request):
-    """
-    Render the index.html template
-    """
-    return render(request, "index.html")
+# Render the blog_index page
+
+@login_required
+def blog_index(request):
+
+    return render(request, "blog_index.html")
+
+# Render the ballybunnion page
 
 def ballybunnion_blog(request):
-    """
-    Render the ballybunnion.html template
-    """
+
     return render(request, "ballybunnion_blog.html")
 
+# Render the doonbeg page
+
 def doonbeg_blog(request):
-    """
-    Render the doonbeg.html template
-    """
+
     return render(request, "doonbeg_blog.html")
 
+# Render the k club page
+
 def k_club_blog(request):
-    """
-    Render the k_club.html template
-    """
+
     return render(request, "k_club_blog.html")
 
 
-# views.py
 
+# Render the create blog page
 
-
-def golf_course_detail(request, pk):
-    golf_course = GolfCourse.objects.get(default=None)(pk=pk)
-    comments = golf_course.comments.filter(approved=True)
+def create_blog(request):
+    form = CreateBlogForm
+    # Check if the request method is POST
     if request.method == 'POST':
-        form = CommentForm(request.POST)
+        form = CreateBlogForm(request.POST)
+    # Check if the form data is valid
         if form.is_valid():
-            comment = form.save(commit=False)
-            comment.user = request.user
-            comment.golf_course = golf_course
-            comment.save()
-            return redirect('golf_course_detail', pk=pk)
-    else:
-        form = CommentForm()
-    return render(request, 'golf_course_detail.html', {'golf_course': golf_course, 'comments': comments, 'form': form})
+            createblog = form.save(commit=False)
+            createblog.user = request.user
+            createblog.save()
+            messages.success(request, "Your Blog has been submitted!")
+            return redirect('blog_index')
+    context = {'CreateBlogForm': form}
+
+    return render(request, "create_blog.html", context)
+
+
+
+
+
 

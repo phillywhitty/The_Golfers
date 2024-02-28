@@ -8,8 +8,11 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 
 class GolfCourse(models.Model):
-    name = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='golf_course_images')
+    course_name = models.CharField(max_length=100, blank=True)
+    location = models.CharField(max_length=100, blank=True)
+    content = models.CharField(max_length=200, blank=True)
+    created_on = models.DateTimeField(auto_now=True)
+    user = models.ForeignKey(User, max_length=10, on_delete=models.CASCADE, null=True)
 
 
 class Comment(models.Model):
@@ -19,8 +22,8 @@ class Comment(models.Model):
     date_published = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
 
-    # Provide a default value for existing rows when adding a non-nullable field
+
     @classmethod
     def default_golf_course(cls):
-        return GolfCourse.objects.first(default=False)  # Change this default as per your requirements
+        return GolfCourse.objects.first(default=False)  
 
