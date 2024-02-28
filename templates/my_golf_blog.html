@@ -11,17 +11,29 @@
                 <div class="card bg-clr-dom-light text-white shadow-sm" style="border-radius: 1rem;">
                     <div class="card-body-about p-5 mb-5 text-center">
                         <div class="mb-md-2 mt-md-4 pb-5">
-
                             <h3 class="fw-bold mb-4 text-uppercase text-heading">My Golf Blogs</h3>
-                            <p class=" about-pg-text text-white mb-2 text-sm-center text-md-left">
-                                My Golf Blog</p>
+                            <br>
+                            {% for blog in MyBlog %}
+                            <br>
+                            {{blog.course_name}}
+                            <br>
+                            {{blog.location}}
+                            <br>
+                            {{blog.content}}
+                            <br>
+                            {{blog.created_on}}
+                            <hr>
+                            {{blog.user}}
+                            <br>
+                            <br>
+                            <a href="{% url 'update_blog' blog.id %}">Update Your Blog</a>
+                            {% endfor %}
                         </div>
-
-
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
     </div>
 </section>

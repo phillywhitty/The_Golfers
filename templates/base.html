@@ -46,8 +46,8 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center">
                     <li class="nav-item mx-2">
-                        <a class="nav-link text-white active" aria-current="page"
-                            href="{% url 'blog_index' %}">Blogs</a>
+                        <a class="nav-link text-white active" aria-current="page" href="{% url 'blog_index' %}">Popular
+                            Blogs</a>
                     </li>
                     <li class="nav-item mx-2">
                         <a class="nav-link text-white active" aria-current="page" href="{% url 'create_blog' %}">Create
@@ -87,9 +87,12 @@
                                     <i class="fa fa-user-circle fa-3x rounded-circle text-white" aria-hidden="true"></i>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
+                                    <li class="text-center">{{ user }}
+                                    </li>
+                                    <hr>
                                     <li><a class="dropdown-item text-center" href="#">My Profile</a>
                                     </li>
-                                    <li><a class="dropdown-item text-center" href="#">My
+                                    <li><a class="dropdown-item text-center" href="{% url 'my_golf_blog' %}">My
                                             Golf Blogs</a></li>
                                     <li><a class="dropdown-item text-center" href="{% url 'create_blog' %}">Create
                                             A Blog</a></li>
