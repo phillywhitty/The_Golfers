@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect, get_object_or_404, reverse
-from django.views import generic, View
+from django.views.generic import ListView, DetailView
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
-from . forms import CreateGolfBlogForm, CreateUserForm, UpdateUserForm
+from . forms import CreateGolfBlogForm, UpdateUserForm
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
-from . models import AddGolfCourse
+from . models import AddGolfCourse, Post
 from django.contrib.auth.models import User
 
 
@@ -30,7 +30,8 @@ def about(request):
 #---------------------------
 @login_required(login_url="account/login.html")
 def popular_courses(request):
-    return render(request, "popular_courses.html")
+    posts = Post.objects.all()
+    return render(request, "popular_courses.html", {'posts': posts})
 
 
 
@@ -164,11 +165,12 @@ def profile_delete(request):
 
     if request.method == 'POST':
 
-        delete = User.objects.get(username=request.user)
+        user = User.objects.get(username=request.user)
 
-        deleteUser.delete()
+        user.delete()
+
         messages.success(request, "Your Profile has been deleted!")
-        return redirect("")
+        return redirect("landing_page")
 
 
     return render(request, "profile_delete.html")

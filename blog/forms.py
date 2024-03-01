@@ -12,14 +12,6 @@ class CreateGolfBlogForm(ModelForm):
         exclude = ['user',]
 
 
-class CreateUserForm(forms.ModelForm):
-
-    class Meta:
-
-        model = User
-        fields = ['username', 'email', 'password1', 'password2']
-
-
 
 class UpdateUserForm(forms.ModelForm):
 
@@ -29,4 +21,8 @@ class UpdateUserForm(forms.ModelForm):
         model = User
         fields = ['username', 'email',]
         exclude = ['password1', 'password2',]
+
+
+
+
 

@@ -13,15 +13,16 @@
                     class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Ballybunnion</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's
-                        content.</p>
+                    <p class="card-text">Breathtaking views and natural design make this one of the few timeless
+                        courses found throughout the world.</p>
                 </div>
+                {% for post in posts %}
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">An item</li>
-                    <li class="list-group-item">A second item</li>
-                    <li class="list-group-item">A third item</li>
+                    <li class="list-group-item">{{ post.content|safe }}</li>
+                    <li class="list-group-item">{{ post.created_on }}</li>
+                    <li class="list-group-item">{{ post.author }}</li>
                 </ul>
+                {% endfor %}
             </div>
         </div>
         <div class="col-md-4">
@@ -30,9 +31,8 @@
                     class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">The K Club</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's
-                        content.</p>
+                    <p class="card-text">A beautiful golf resort with upmarket facilities. Ideal destination if you want
+                        to visit one of Ireland's premier golf clubs.</p>
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">An item</li>
@@ -47,9 +47,10 @@
                     class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Doonbeg</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's
-                        content.</p>
+                    <p class="card-text">What a course definitely the best I've ever played. I really enjoyed the
+                        experience of playing
+                        such a fabulous course.
+                    </p>
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">An item</li>
