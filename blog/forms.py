@@ -1,10 +1,32 @@
 from django.forms import ModelForm
 from django.contrib.auth.models import User
-from . models import GolfCourse
+from django.contrib.auth.models import User, UserCreationForm
+from . models import AddGolfCourse
 
 
-class CreateBlogForm(ModelForm):
+class CreateGolfBlogForm(ModelForm):
+
     class Meta:
-        model = GolfCourse
+        model = AddGolfCourse
         fields = ['course_name', 'location', 'content',]
         exclude = ['user',]
+
+
+class CreateUserForm(UserCreationForm):
+
+    class Meta:
+
+        model = User
+        fields = ['username', 'email', 'password1', 'password2']
+
+
+
+class UpdateUserForm(forms.ModelForm):
+
+    password = None
+
+    class Meta:
+        model = User
+        fields = ['username', 'email',]
+        exclude = ['password1', 'password2',]
+

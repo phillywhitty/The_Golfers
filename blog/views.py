@@ -2,11 +2,11 @@ from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
-from . forms import CreateBlogForm
+from . forms import CreateGolfBlogForm, CreateUserForm, UpdateUserForm
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
-from . models import GolfCourse
-
+from . models import AddGolfCourse
+from django.contrib.auth.models import User
 
 
 # ==============================
@@ -26,11 +26,13 @@ def about(request):
     return render(request, "about.html")
 
 
-# Render the blog_index page
+# Render the popular_courses page
 #---------------------------
 @login_required(login_url="account/login.html")
-def blog_index(request):
-    return render(request, "blog_index.html")
+def popular_courses(request):
+    return render(request, "popular_courses.html")
+
+
 
 
 # ==============================
@@ -43,11 +45,11 @@ def blog_index(request):
 
 @login_required(login_url="account/login.html")
 def create_blog(request):
-    form = CreateBlogForm
+    form = CreateGolfBlogForm
 
     # Check if the request method is POST
     if request.method == 'POST':
-        form = CreateBlogForm(request.POST)
+        form = CreateGolfBlogForm(request.POST)
 
     # Check if the form data is valid
         if form.is_valid():
@@ -55,10 +57,10 @@ def create_blog(request):
             createblog.user = request.user
             createblog.save()
             messages.success(request, "Your Blog has been submitted!")
-            return redirect('blog_index')
+            return redirect('popular_courses')
 
     # create a context dictionary with the form and pass it to the template
-    context = {'CreateBlogForm': form}
+    context = {'CreateGolfBlogForm': form}
     # Render the 'create_blog.html' template with the context data
     return render(request, "create_blog.html", context)
 
@@ -72,7 +74,7 @@ def my_golf_blog(request):
     # Get the ID of the current user
     current_user = request.user.id
     # Retrieve all GolfCourse objects where the user is the current user
-    my_blog = GolfCourse.objects.all().filter(user=current_user)
+    my_blog = AddGolfCourse.objects.all().filter(user=current_user)
     context = {'MyBlog': my_blog}
     # Render the my_golf_blog.html template with the context data
     return render(request, "my_golf_blog.html", context)
@@ -85,17 +87,17 @@ def my_golf_blog(request):
 def update_blog(request, pk):
     # Attempt to retrieve the blog with the given id and owned by the current user
     try:
-        blog = GolfCourse.objects.get(id=pk, user=request.user)
+        blog = AddGolfCourse.objects.get(id=pk, user=request.user)
     except:
     # If the blog does not exist or does not belong to the current user, redirect to my_golf_blog page
         return redirect('my_golf_blog')
 
     # Create a form instance with the blog data to be updated
-    form = CreateBlogForm(instance=blog)
+    form = CreateGolfBlogForm(instance=blog)
     
     # Check if the submitted form data is valid
     if request.method == 'POST':
-        form = CreateBlogForm(request.POST, instance=blog)
+        form = CreateGolfBlogForm(request.POST, instance=blog)
         if form.is_valid():
             form.save()
             messages.success(request, "Your Blog has been updated!")
@@ -112,7 +114,7 @@ def update_blog(request, pk):
 def delete_blog(request, pk):
     # Attempt to retrieve the blog with the given id and owned by the current user
     try :
-        blog = GolfCourse.objects.get(id=pk, user=request.user)
+        blog = AddGolfCourse.objects.get(id=pk, user=request.user)
     # If the blog does not exist or does not belong to the current user, redirect to my_golf_blog page
     except:
         return redirect('my_golf_blog')
@@ -124,3 +126,49 @@ def delete_blog(request, pk):
 
     # Render the delete_blog.html template with the context data
     return render(request, "delete_blog.html")
+
+
+#-----------------------------------------#
+# Lets a user UPDATE their username and email
+#----------------------------------------#
+
+@login_required(login_url="account/login.html")
+def profile(request):
+
+    form = UpdateUserForm(instance=request.user)
+
+    if request.method == 'POST':
+
+        form = UpdateUserForm(request.POST, instance=request.user)
+
+        if form.is_valid():
+
+            form.save()
+
+            messages.success(request, "Your Profile has been updated!")
+
+            return redirect('my_golf_blog')
+    
+    context = {'ProfileForm': form}
+
+    return render(request, "profile.html", context)
+
+
+
+#-----------------------------------------#
+# Lets a user DELETE their account
+#----------------------------------------#
+
+@login_required(login_url="account/login.html")
+def profile_delete(request):
+
+    if request.method == 'POST':
+
+        delete = User.objects.get(username=request.user)
+
+        deleteUser.delete()
+        messages.success(request, "Your Profile has been deleted!")
+        return redirect("")
+
+
+    return render(request, "profile_delete.html")

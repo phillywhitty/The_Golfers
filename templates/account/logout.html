@@ -1,27 +1,33 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% load i18n %}
+{% load account socialaccount %}
 
-{% block head_title %}{% trans "Sign Out" %}{% endblock %}
+{% block head_title %}{% trans "Log Out" %}{% endblock %}
 
 {% block content %}
-<div class="container">
-  <div class="row">
+<div class="container form-container mt-5 login-border custom-narrow-container">
+  <div class=" container-fluid row">
     <div class="col-md-8 mt-3 offset-md-2">
-      <h3>{% trans "Sign Out" %}</h3>
-
-      <p>{% trans 'Are you sure you want to sign out?' %}</p>
+      <h3 class="display-4 login-text pb-2 text-center">Log Out</h3>
+      <hr class="h-line my-4">
+      <p class="welcome-login-text pb-2 text-center">Are you sure you want to Log Out?</p>
     </div>
   </div>
-  <div class="row">
+  <div class="container-fluid row">
     <div class="col-md-8 mt-3 offset-md-2">
-
-      <form method="post" action="{% url 'account_logout' %}">
+      <!-- Logout form -->
+      <form class="logout-form text-center" method="POST" action="{% url 'account_logout' %}">
+        <!-- Security token from django against attackers -->
         {% csrf_token %}
-        {% if redirect_field_value %}
-        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-        {% endif %}
-        <button class="btn btn-signup right" type="submit">{% trans 'Sign Out' %}</button>
+        <div class="form-group text-white">
+          <br>
+          <!-- Include a hidden input field for redirecting users after login if a custom redirect URL is provided -->
+          {% if redirect_field_value %}
+          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+          {% endif %}
+          <button class="btn btn-signup mb-3" type="submit">Log Out</button>
       </form>
     </div>
   </div>

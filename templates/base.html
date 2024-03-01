@@ -38,7 +38,7 @@
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
             {% if user.is_authenticated %}
-            <a class="navbar-brand text-white mx-auto fw-bolder" href="{% url 'blog_index' %}">The Golfers Blog</a>
+            <a class="navbar-brand text-white mx-auto fw-bolder" href="{% url 'popular_courses' %}">The Golfers Blog</a>
             <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon bg-white"></span>
@@ -46,12 +46,18 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center">
                     <li class="nav-item mx-2">
-                        <a class="nav-link text-white active" aria-current="page" href="{% url 'blog_index' %}">Popular
-                            Blogs</a>
+                        <a class="nav-link text-white active" aria-current="page"
+                            href="{% url 'popular_courses' %}">Popular
+                            Courses</a>
                     </li>
                     <li class="nav-item mx-2">
                         <a class="nav-link text-white active" aria-current="page" href="{% url 'create_blog' %}">Create
                             A Blog</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link text-white active" aria-current="page" href="{% url 'profile' %}">My Profile
+
+                        </a>
                     </li>
                     {% else %}
                     <a class="navbar-brand text-white mx-5 fw-bolder" href="{% url 'landing_page' %}">The Golfers
@@ -90,7 +96,7 @@
                                     <li class="text-center">{{ user }}
                                     </li>
                                     <hr>
-                                    <li><a class="dropdown-item text-center" href="#">My Profile</a>
+                                    <li><a class="dropdown-item text-center" href="{% url 'profile' %}">My Profile</a>
                                     </li>
                                     <li><a class="dropdown-item text-center" href="{% url 'my_golf_blog' %}">My
                                             Golf Blogs</a></li>

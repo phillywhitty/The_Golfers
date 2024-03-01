@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-{% load crispy_forms_tags %}
+
 
 {% block title %} The Golfers- About Us {% endblock %}
 
@@ -12,18 +12,19 @@
                 <div class="card bg-clr-dom-light text-white shadow-sm" style="border-radius: 1rem;">
                     <div class="card-body-about p-5 mb-5 text-center">
                         <div class="mb-md-2 mt-md-4 pb-5">
-                            <h3 class="fw-bold mb-4 text-uppercase text-heading">Hi {{ user }} - Create Your Blog</h3>
+                            <h3 class="fw-bold mb-4 text-uppercase text-heading">Delete your account</h3>
+                            <p>Are you sure you want to delete your account ?</p>
                             <form method="POST" autocomplete="off">
                                 {% csrf_token %}
-                                {{CreateGolfBlogForm|crispy}}
-                                <button class="btn btn-signup mb-3" type="submit">Create Blog</button>
+                                <button class="btn btn-signup mb-3" type="submit">Yes Delete My Profile</button>
                             </form>
+                            <br>
+                            <a href="{% url 'profile' %}">Return to your profile</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
 </section>
 {%endblock%}

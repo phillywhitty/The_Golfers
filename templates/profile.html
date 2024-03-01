@@ -12,11 +12,11 @@
                 <div class="card bg-clr-dom-light text-white shadow-sm" style="border-radius: 1rem;">
                     <div class="card-body-about p-5 mb-5 text-center">
                         <div class="mb-md-2 mt-md-4 pb-5">
-                            <h3 class="fw-bold mb-4 text-uppercase text-heading">Hi {{ user }} - Create Your Blog</h3>
+                            <h3 class="fw-bold mb-4 text-uppercase text-heading">My Profile</h3>
                             <form method="POST" autocomplete="off">
                                 {% csrf_token %}
-                                {{CreateGolfBlogForm|crispy}}
-                                <button class="btn btn-signup mb-3" type="submit">Create Blog</button>
+                                {{ProfileForm|crispy}}
+                                <button class="btn btn-signup mb-3" type="submit">Update</button>
                             </form>
                         </div>
                     </div>
@@ -24,6 +24,12 @@
             </div>
         </div>
     </div>
+    <div class="container border border-warning text-white">
+        <div class="row">
+            <h2 class="text-center text-white">Delete your account</h2>
+            <br>
+            <a href="{% url 'profile_delete' %}">Proceed to delete your account</a>
+        </div>
     </div>
 </section>
 {%endblock%}

@@ -1,11 +1,11 @@
 from django_summernote.admin import SummernoteModelAdmin
 from django.contrib import admin
-from .models import GolfCourse
+from .models import AddGolfCourse
 
 
-@admin.register(GolfCourse)
-class GolfCourse(SummernoteModelAdmin):
+@admin.register(AddGolfCourse)
+class AddGolfCourse(SummernoteModelAdmin):
     """
-    Golf Course model in admin panel
+   Adding a Golf Course model in admin panel
     """
     summernote_fields = ('content')
