@@ -1,6 +1,6 @@
 from django.forms import ModelForm
+from django import forms
 from django.contrib.auth.models import User
-from django.contrib.auth.models import User, UserCreationForm
 from . models import AddGolfCourse
 
 
@@ -12,7 +12,7 @@ class CreateGolfBlogForm(ModelForm):
         exclude = ['user',]
 
 
-class CreateUserForm(UserCreationForm):
+class CreateUserForm(forms.ModelForm):
 
     class Meta:
 
