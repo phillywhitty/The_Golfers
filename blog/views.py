@@ -158,7 +158,7 @@ def profile(request):
 
 #-----------------------------------------#
 # Lets a user DELETE their account
-#----------------------------------------#
+#-----------------------------------------#
 
 @login_required(login_url="account/login.html")
 def profile_delete(request):

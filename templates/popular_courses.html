@@ -13,12 +13,13 @@
                     class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Ballybunnion</h5>
+                    <h5>Review:</h5>
                     <p class="card-text">Breathtaking views and natural design make this one of the few timeless
                         courses found throughout the world.</p>
                 </div>
                 {% for post in posts %}
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">{{ post.content|safe }}</li>
+                <ul class="list-group list-group-flush mb-4">
+                    <li class="list-group-item pt-1">{{ post.content|safe }}</li>
                     <li class="list-group-item">{{ post.created_on }}</li>
                     <li class="list-group-item">{{ post.author }}</li>
                 </ul>
@@ -34,7 +35,7 @@
                     <p class="card-text">A beautiful golf resort with upmarket facilities. Ideal destination if you want
                         to visit one of Ireland's premier golf clubs.</p>
                 </div>
-                <ul class="list-group list-group-flush">
+                <ul class="list-group list-group-flush mb-4">
                     <li class="list-group-item">An item</li>
                     <li class="list-group-item">A second item</li>
                     <li class="list-group-item">A third item</li>
@@ -52,7 +53,7 @@
                         such a fabulous course.
                     </p>
                 </div>
-                <ul class="list-group list-group-flush">
+                <ul class="list-group list-group-flush mb-4">
                     <li class="list-group-item">An item</li>
                     <li class="list-group-item">A second item</li>
                     <li class="list-group-item">A third item</li>
