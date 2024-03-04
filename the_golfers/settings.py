@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'crispy_forms',
-    'crispy_bootstrap5',
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
@@ -91,8 +90,8 @@ AUTHENTICATION_BACKENDS = (
 
 SITE_ID = 1
 
-CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
-CRISPY_TEMPLATE_PACK = "bootstrap5"
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
+CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 
 
