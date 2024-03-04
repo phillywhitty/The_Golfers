@@ -21,9 +21,13 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['the-golfers-blog-ed907c4b0918.herokuapp.com']
+ALLOWED_HOSTS = ['the-golfers-blog-ed907c4b0918.herokuapp.com', 
+                '8000-phillywhitty-thegolfers-ohlgcowv5ox.ws-eu108.gitpod.io'
+]
 
-CSRF_TRUSTED_ORIGINS = ['the-golfers-blog-ed907c4b0918.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = ['the-golfers-blog-ed907c4b0918.herokuapp.com',
+                        '8000-phillywhitty-thegolfers-ohlgcowv5ox.ws-eu108.gitpod.io'
+]
 
 
 # Application definition
@@ -43,7 +47,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary',
     'django_summernote',
-    'django_extensions',
     'blog',
 ]
 
@@ -90,7 +93,6 @@ AUTHENTICATION_BACKENDS = (
 
 SITE_ID = 1
 
-CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 
