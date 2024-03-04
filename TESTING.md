@@ -4,9 +4,7 @@ Go back to [README.md](/README.md)
 - [Code Validation](#code-validation)
     - [HTML](#html)
     - [CSS](#css)
-    - [JavaScript](#JavaScript)
     - [Python](#python)
-- [Responsiveness](#Responsiveness)
 - [Browser Compatibility](#browser-compatibility)
 - [Lighthouse](#Lighthouse)
 - [Manual Testing](#manual-testing)
@@ -39,10 +37,8 @@ Go back to [README.md](/README.md)
 
 
 ## JavaScript
-|file|Validator|Result|Comment|
-| --- | --- | --- |----|
 
-| profile.js |![js](./assets/testing/js/profiles_js_checker.png) | <mark>PASS<mark> |This is js script from CI's walkthrough. I did not want to change this as the function is working. It has two warnings and shows $ as undefined variable |
+|I didn't prioritize using JavaScript functions since my main focus was on Django. Instead, I extensively utilized other PP4 resources, where JavaScript wasn't heavily featured either. However, I'm keen on integrating JavaScript into this project eventually, so I've retained the script files in my base.html for future implementation|
 
 
 ## Python
