@@ -3,7 +3,6 @@
 <!DOCTYPE html>
 <html class="h-100" lang="en-us">
 
-</html>
 <!-- Head section -->
 
 <head>
@@ -62,7 +61,7 @@
                     </li>
                     {% else %}
                     <!-- Navbar brand for non-authenticated users -->
-                    <a class="navbar-brand text-white mx-5 fw-bolder" href="{% url 'landing_page' %}">The Golfers
+                    <a class="navbar-brand text-white ml-2 mr-2 fw-bolder" href="{% url 'landing_page' %}">The Golfers
                         Blog</a>
                     <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false"
@@ -96,9 +95,8 @@
                                     <i class="fa fa-user-circle fa-3x rounded-circle text-white" aria-hidden="true"></i>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
-                                    <li class="text-center">{{ user }}
+                                    <li class="text-center pb-1 text-decoration-underline fw-bolder">{{ user }}
                                     </li>
-                                    <hr>
                                     <li><a class="dropdown-item text-center" href="{% url 'profile' %}">My Profile</a>
                                     </li>
                                     <li><a class="dropdown-item text-center" href="{% url 'my_golf_blog' %}">My
@@ -122,8 +120,6 @@
                     </div>
             </div>
     </nav>
-    </div>
-    </header>
 
 
     <!-- Container for message alerts -->

@@ -20,13 +20,13 @@
       <form class="logout-form text-center" method="POST" action="{% url 'account_logout' %}">
         <!-- CSRF token for security -->
         {% csrf_token %}
-        <div class="form-group text-white">
-          <br>
-          <!-- Include a hidden input field for redirecting users after login if a custom redirect URL is provided -->
-          {% if redirect_field_value %}
-          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-          {% endif %}
-          <button class="btn btn-signup mb-3" type="submit">Log Out</button>
+        <div class="form-group text-white"></div>
+        <br>
+        <!-- Include a hidden input field for redirecting users after login if a custom redirect URL is provided -->
+        {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        {% endif %}
+        <button class="btn btn-signup mb-3" type="submit">Log Out</button>
       </form>
     </div>
   </div>

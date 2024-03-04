@@ -1,22 +1,22 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% load i18n %}
+
 {% load account socialaccount %}
 
-{% block head_title %}{% trans "Log In" %}{% endblock %}
+{% block head_title %}Log In{% endblock %}
 
 {% block content %}
 <div class="container form-container mt-5 login-border custom-narrow-container">
   <div class=" container-fluid row">
     <div class="col-md-8 mt-3 offset-md-2">
-      <h3 class="display-4 login-text pb-2 text-center">{% trans "Log In" %}</h3>
+      <h3 class="display-4 login-text pb-2 text-center">Log In</h3>
       <hr class="h-line my-4">
-      <p class="welcome-login-text pb-2 text-center">{% blocktrans %}Welcome back to The Golfers Blog.
+      <p class="welcome-login-text pb-2 text-center">Welcome back to The Golfers Blog.
         To leave a comment or like a post, please log in.
         <br>
         Not a member ? Then <a class="sign-up-text-link" href="{{ signup_url }}">Sign Up</a>
-        first.{% endblocktrans %}</p>
+        first.</p>
     </div>
   </div>
   <div class="container-fluid row">
@@ -36,20 +36,20 @@
         <div class="form-group text-white">
           {{ form.login.label_tag }}
           <input class="form-control input-field-login" id="id_login" type="text" name="{{ form.login.name }}"
-            placeholder="Enter your username" />
+            placeholder="Enter your username">
         </div>
         <br>
         <div class="form-group text-white">
           {{ form.password.label_tag }}
           <input class="form-control input-field-login" id="id_password" type="password" name="{{ form.password.name }}"
-            placeholder="Enter your password" />
+            placeholder="Enter your password">
         </div>
         <br>
         <!-- Include a hidden input field for redirecting users after login if a custom redirect URL is provided -->
         {% if redirect_field_value %}
-        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}">
         {% endif %}
-        <button class="btn btn-signup mb-3" type="submit">{% trans "Sign In" %}</button>
+        <button class="btn btn-signup mb-3" type="submit">Sign In</button>
       </form>
     </div>
   </div>

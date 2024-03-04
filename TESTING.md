@@ -18,24 +18,24 @@ Go back to [README.md](/README.md)
 ### HTML
 |Page|Validator|Result|
 | --- | --- | --- |
-| LandingPage |![landing_page](./assets/testing/html/index_html_checker.png) | <mark>PASS<mark> |
-| About Us |![about](./assets/testing/html/checkout_html_checker.png) | <mark>PASS<mark> |
-| Popular Courses|![popular_courses](./assets/testing/html/products_detail_html_chekcer.png) | <mark>PASS<mark> |
-| Sign Up |![sign_up](./assets/testing/html/sign_up_html_checker.png) | <mark>PASS<mark> |
-| Log In |![log_in](./assets/testing/html/log_in_html_checker.png) | <mark>PASS<mark> |
-| My Profile |![my_profile](./assets/testing/html/my_profile_html_checker.png) | <mark>PASS<mark> |
-| Create Blog |![create_blog](./assets/testing/html/my_wallet_html_checker.png) | <mark>PASS<mark> |
-| My Blogs|![my_golf_blog](/assets/testing/html/password_reset_html_checker.png) | <mark>PASS<mark> |
-| Update Blog |![update_blog](./assets/testing/html/checkout_success_html_checker.png) | <mark>PASS<mark> |
-| Delete Blog |![delete_blog](./assets/testing/html/checkout_success_html_checker.png) | <mark>PASS<mark> |
-| Log Out |![log_out](./assets/testing/html/log_out_html_checker.png) | <mark>PASS<mark> |
+| LandingPage |![landing_page](./docs/testing_images/landing_page_html_check.png) | <mark>PASS<mark> |
+| About Us |![about](./docs/testing_images/about_us_html_check.png) | <mark>PASS<mark> |
+| Popular Courses|![popular_courses](./docs/testing_images/popular_courses_html_check.png) | <mark>PASS<mark> |
+| Sign Up |![sign_up](./docs/testing_images/sign_up_html_check.png) | <mark>PASS<mark> |
+| Log In |![log_in](./docs/testing_images/log_in_html_check.png) | <mark>PASS<mark> |
+| My Profile |![my_profile](./docs/testing_images/profile_html_check.png) | <mark>PASS<mark> |
+| Create Blog |![create_blog](./docs/testing_images/create_blog_html_check.png) | <mark>PASS<mark> |
+| My Blogs|![my_golf_blog](./docs/testing_images/my_golf_blogs_html_check.png) | <mark>PASS<mark> |
+| Update Blog |![update_blog](./docs/testing_images/update_blog_html_check.png) | <mark>PASS<mark> |
+| Delete Blog |![delete_blog](./docs/testing_images/delete_blog_html_check.png) | <mark>PASS<mark> |
+| Log Out |![log_out](./docs/testing_images/log_out_html_check.png) | <mark>PASS<mark> |
 
 
 
 ### CSS
 |file|Validator|Result|
 | --- | --- | --- |
-| style.css |![style](./assets/testing/css/base_css_css_checker.png) | <mark>PASS<mark> |
+| style.css |![style](./docs/testing_images/style.css_check.png) | <mark>PASS<mark> |
 
 
 ## JavaScript
