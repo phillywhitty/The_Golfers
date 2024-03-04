@@ -19,11 +19,11 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, "templates")
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*',  'the-golfers-blog-ed907c4b0918.herokuapp.com']
+ALLOWED_HOSTS = ['the-golfers-blog-ed907c4b0918.herokuapp.com']
 
-CSRF_TRUSTED_ORIGINS = ["https://8000-phillywhitty-thegolfers-n5lal0zn8bq.ws-eu106.gitpod.io"]
+CSRF_TRUSTED_ORIGINS = ['the-golfers-blog-ed907c4b0918.herokuapp.com']
 
 
 # Application definition
