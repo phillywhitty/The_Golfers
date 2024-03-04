@@ -49,13 +49,13 @@ Go back to [README.md](/README.md)
 
 |File|App|Image|Result|Comment|
 | --- |----| --- | --- |----|
-| urls | the_golfers |![python](./assets/testing/python/wexford_treasures_main_urls_pep8.png) | <mark>PASS<mark> ||
-| admin | blog |![python](./assets/testing/python/profiles_admin_pep8.png) | <mark>PASS<mark> ||
-| apps | blog |![python](./assets/testing/python/profile_apps_pep8.png) | <mark>PASS<mark> ||
-| forms | blog |![python](./assets/testing/python/profiles_forms_pep8.png) | <mark>PASS<mark> ||
-| models | blog |![python](./assets/testing/python/profiles_models_pep8.png) | <mark>PASS<mark> ||
-| urls | blog |![python](./assets/testing/python/profiles_urls_pep8.png) | <mark>PASS<mark> ||
-| views | blog |![python](./assets/testing/python/profiles_views_pep8.png) | <mark>PASS<mark> ||
+| urls | the_golfers |![python](./docs/testing_images/the_golfers_urls_pep8.png) | <mark>PASS<mark> ||
+| admin | blog |![python](./docs/testing_images/blog_admin_pep8.png) | <mark>PASS<mark> ||
+| apps | blog |![python](./docs/testing_images/blog_apps_pep8.png) | <mark>PASS<mark> ||
+| forms | blog |![python](./docs/testing_images/blogs_forms_pep8.png) | <mark>PASS<mark> ||
+| models | blog |![python](./docs/testing_images/blog_models_pep8.png) | <mark>PASS<mark> ||
+| urls | blog |![python](./docs/testing_images/blog_urls_pep8.png) | <mark>PASS<mark> ||
+| views | blog |![python](./docs/testing_images/blog_views_pep8.png) | <mark>PASS<mark> ||
 
 
 

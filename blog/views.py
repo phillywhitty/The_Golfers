@@ -15,19 +15,19 @@ from django.contrib.auth.models import User
 
 
 # Render the landing_page
-#------------------------
+# ------------------------
 def landing_page(request):
     return render(request, "landing_page.html")
 
 
 # Render the about page
-#----------------------
+# ----------------------
 def about(request):
     return render(request, "about.html")
 
 
 # Render the popular courses page
-#----------------------
+# ----------------------
 def popular_courses(request):
     return render(request, "popular_courses.html")
 
@@ -36,7 +36,7 @@ def popular_courses(request):
 # CRUD VIEWS
 # ==============================
 
-#------------======-----------#
+# -----------======-----------#
 # Render the CREATE blog page #
 # -----------======-----------#
 
@@ -62,9 +62,9 @@ def create_blog(request):
     return render(request, "create_blog.html", context)
 
 
-#-------------====-----------------------------------------#
+# ------------====-----------------------------------------#
 # Lets a user READ a blog they created on my_golf_blog page
-#-------------====-----------------------------------------#
+# ------------====-----------------------------------------#
 
 @login_required(login_url="account/login.html")
 def my_golf_blog(request):
@@ -77,21 +77,21 @@ def my_golf_blog(request):
     return render(request, "my_golf_blog.html", context)
 
 
-#-------------======----------------------------#
+# ------------======----------------------------#
 # Lets a user UPDATE a blog on my_golf_blog page
-#-------------======----------------------------#
+# ------------======----------------------------#
 @login_required(login_url="account/login.html")
 def update_blog(request, pk):
-    # Attempt to retrieve the blog with the given id and owned by the current user
+    # Attempt to get the blog with the given id and owned by the current user
     try:
         blog = AddGolfCourse.objects.get(id=pk, user=request.user)
     except:
-    # If the blog does not exist or does not belong to the current user, redirect to my_golf_blog page
+        # Redirect to my_golf_blog page if blog does not exist
         return redirect('my_golf_blog')
 
     # Create a form instance with the blog data to be updated
     form = CreateGolfBlogForm(instance=blog)
-    
+
     # Check if the submitted form data is valid
     if request.method == 'POST':
         form = CreateGolfBlogForm(request.POST, instance=blog)
@@ -104,15 +104,15 @@ def update_blog(request, pk):
     return render(request, "update_blog.html", context)
 
 
-#-------------======----------------------------#
+# ------------======----------------------------#
 # Lets a user DELETE a blog on my_golf_blog page
-#-------------======----------------------------#
+# ------------======----------------------------#
 @login_required(login_url="account/login.html")
 def delete_blog(request, pk):
-    # Attempt to retrieve the blog with the given id and owned by the current user
-    try :
+    # Attempt to retrieve the blog with owned by the current user
+    try:
         blog = AddGolfCourse.objects.get(id=pk, user=request.user)
-    # If the blog does not exist or does not belong to the current user, redirect to my_golf_blog page
+    # If the blog does not exist redirect to my_golf_blog page
     except:
         return redirect('my_golf_blog')
     # Check if the submitted form data is valid
@@ -125,9 +125,9 @@ def delete_blog(request, pk):
     return render(request, "delete_blog.html")
 
 
-#-----------------------------------------#
+# ------------======-----------------------#
 # Lets a user UPDATE their username and email
-#----------------------------------------#
+# ------------======---------------------#
 
 @login_required(login_url="account/login.html")
 def profile(request):
@@ -135,7 +135,7 @@ def profile(request):
     form = UpdateUserForm(instance=request.user)
     # If the request method is POST, process the form submission
     if request.method == 'POST':
-        # Bind the form data to the request POST data and the current user instance
+        # Bind form data to the request POST data and the current user instance
         form = UpdateUserForm(request.POST, instance=request.user)
         # If the form data is valid, save the form
         if form.is_valid():
@@ -148,10 +148,9 @@ def profile(request):
     return render(request, "profile.html", context)
 
 
-
-#-----------------------------------------#
+# ------------======-----------------------#
 # Lets a user DELETE their account
-#-----------------------------------------#
+# ------------======-----------------------#
 
 @login_required(login_url="account/login.html")
 def profile_delete(request):
@@ -165,4 +164,3 @@ def profile_delete(request):
         # Redirect to the landing page after account deletion
         return redirect("landing_page")
     return render(request, "profile_delete.html")
-
