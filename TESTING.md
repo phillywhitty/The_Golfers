@@ -73,10 +73,10 @@ Go back to [README.md](/README.md)
 
 |Page|Validator|Result|
 | --- | --- | --- |
-| Home Desktop |![home](./assets/testing/lighthouse/home_desktop_lighthouse.png) | <mark>PASS<mark> |
-| Log-In Desktop |![home](./assets/testing/lighthouse/log_in_desktop_lighthouse.png) | <mark>PASS<mark> |
-| Log-Out Desktop |![home](./assets/testing/lighthouse/log_out_desktop_lighthouse.png) | <mark>PASS<mark> |
-| My Wallet Desktop |![home](./assets/testing/lighthouse/my_wallet_desktop_lighthouse.png) | <mark>PASS<mark> |
-| Products Desktop |![home](./assets/testing/lighthouse/products_desktop_lighthouse.png) | <mark>PASS<mark> |
-| Profile Desktop |![home](./assets/testing/lighthouse/profile_desktop_lighthouse.png) | <mark>PASS<mark> |
-| Shopping Bag Desktop |![home](./assets/testing/lighthouse/shopping_bag_desktop_lighthouse.png) | <mark>PASS<mark> |
+| Landing Page Desktop |![landing_page](./docs/testing_images/landing_page_lighthouse.png) | <mark>PASS<mark> |
+| Sign-Up Desktop |![signup](./docs/testing_images/signup_lighthouse.png) | <mark>PASS<mark> |
+| Log-In Desktop |![login](./docs/testing_images/login_lighthouse.png) | <mark>PASS<mark> |
+| My Profile Desktop |![profile](./docs/testing_images/profile_lighthouse.png) | <mark>PASS<mark> |
+| Popular Courses |![popular](./docs/testing_images/popular_courses_lighthouse.png) | <mark>PASS<mark> |
+| Create Blog |![create](./docs/testing_images/create_blog_lighthouse.png) | <mark>PASS<mark> |
+| My Golf Blogs |![golfblog](./docs/testing_images/my_golf_blog_lighthouse.png) | <mark>PASS<mark> |
