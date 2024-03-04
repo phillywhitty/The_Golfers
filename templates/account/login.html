@@ -23,7 +23,7 @@
     <div class="col-md-8 mt-3 offset-md-2">
       <!-- Login form -->
       <form class="login-form text-center" method="POST" action="{% url 'account_login' %}">
-        <!-- Security token from django against attackers -->
+        <!-- CSRF token for security -->
         {% csrf_token %}
         <!-- Display non-field errors excluding '__all__' -->
         {% for error in form.non_field_errors %}
@@ -50,9 +50,6 @@
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
         <button class="btn btn-signup mb-3" type="submit">{% trans "Sign In" %}</button>
-        <small class="text-muted d-block">
-          <a class="forgot-password-text" href="{% url 'account_reset_password' %}">Forgot Password?</a>
-        </small>
       </form>
     </div>
   </div>

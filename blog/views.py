@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 from . forms import CreateGolfBlogForm, UpdateUserForm
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
-from . models import AddGolfCourse, Post
+from . models import AddGolfCourse
 from django.contrib.auth.models import User
 
 
@@ -26,14 +26,10 @@ def about(request):
     return render(request, "about.html")
 
 
-# Render the popular_courses page
-#---------------------------
-@login_required(login_url="account/login.html")
+# Render the popular courses page
+#----------------------
 def popular_courses(request):
-    posts = Post.objects.all()
-    return render(request, "popular_courses.html", {'posts': posts})
-
-
+    return render(request, "popular_courses.html")
 
 
 # ==============================
@@ -58,7 +54,7 @@ def create_blog(request):
             createblog.user = request.user
             createblog.save()
             messages.success(request, "Your Blog has been submitted!")
-            return redirect('popular_courses')
+            return redirect('my_golf_blog')
 
     # create a context dictionary with the form and pass it to the template
     context = {'CreateGolfBlogForm': form}
@@ -135,23 +131,20 @@ def delete_blog(request, pk):
 
 @login_required(login_url="account/login.html")
 def profile(request):
-
+    # Create a form instance with the current user's data
     form = UpdateUserForm(instance=request.user)
-
+    # If the request method is POST, process the form submission
     if request.method == 'POST':
-
+        # Bind the form data to the request POST data and the current user instance
         form = UpdateUserForm(request.POST, instance=request.user)
-
+        # If the form data is valid, save the form
         if form.is_valid():
-
             form.save()
-
+            # Display a success message
             messages.success(request, "Your Profile has been updated!")
-
+            # Redirect to the user's golf blog page
             return redirect('my_golf_blog')
-    
     context = {'ProfileForm': form}
-
     return render(request, "profile.html", context)
 
 
@@ -162,15 +155,14 @@ def profile(request):
 
 @login_required(login_url="account/login.html")
 def profile_delete(request):
-
+    # If the request method is POST, process the account deletion
     if request.method == 'POST':
-
+        # Get the current user
         user = User.objects.get(username=request.user)
-
         user.delete()
-
+        # Display a success message
         messages.success(request, "Your Profile has been deleted!")
+        # Redirect to the landing page after account deletion
         return redirect("landing_page")
-
-
     return render(request, "profile_delete.html")
+

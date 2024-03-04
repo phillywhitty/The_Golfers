@@ -1,24 +1,21 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% load i18n %}
-
 {% load crispy_forms_tags %}
 
-{% block head_title %}{% trans "Signup" %}{% endblock %}
+{% block head_title %} Signup {% endblock %}
 
 {% block content %}
 <div class="container form-container p-3 my-3 login-border custom-narrow-container">
   <div class="text-center">
-    <h3 class="display-4 login-text pb-2 text-center">{% trans "Sign Up" %}</h3>
+    <h3 class="display-4 login-text pb-2 text-center">Sign Up</h3>
     <hr class="h-line my-4">
-    <p class="welcome-login-text">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}"
-        class="sign-in-text">Sign
-        In</a>{% endblocktrans %}</p>
+    <p class="welcome-login-text">Already have an account? Then please <a href="{{ login_url }}"
+        class="sign-in-text">Sign In</a></p>
   </div>
   <!-- Sign Up form -->
   <form id="signup_form" method="post" action="{% url 'account_signup' %}">
-    <!-- Security token from django against attackers -->
+    <!-- CSRF token for security -->
     {% csrf_token %}
     {{ form | crispy }}
     {% if redirect_field_value %}

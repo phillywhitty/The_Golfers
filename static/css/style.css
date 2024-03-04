@@ -141,7 +141,6 @@ body {
 
 /* Footer */
 
-
 .footer_profile ul {
     list-style: outside none none;
     margin: 0;
@@ -172,17 +171,12 @@ body {
 }
 
 
-
-
-
 /* Forms */
 
 .form-container {
     color: #fff !important;
     width: 90%;
 }
-
-
 
 
 /* Login Page */
@@ -222,7 +216,6 @@ body {
 .forgot-password-text {
     color: #fff !important;
 }
-
 
 /* Sign-Up Page */
 

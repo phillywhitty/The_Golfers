@@ -1,67 +1,64 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block title %} Popular Courses {% endblock %}
-
 {% block content %}
 <section></section>
 <div class="container">
     <div class="row gy-3">
         <div class="col-md-4">
             <div class="card">
+                <!-- Card for Ballybunnion -->
                 <img src="https://res.cloudinary.com/dzxjg4vwg/image/upload/v1708960753/the_ballybunnion_500px_oni1la.png"
-                    class="card-img-top" alt="...">
+                    class="card-img-top" alt="Ballybunnion-img">
                 <div class="card-body">
-                    <h5 class="card-title">Ballybunnion</h5>
-                    <h5>Review:</h5>
+                    <h5 class="card-title">Ballybunnion Review:</h5>
                     <p class="card-text">Breathtaking views and natural design make this one of the few timeless
                         courses found throughout the world.</p>
                 </div>
-                {% for post in posts %}
                 <ul class="list-group list-group-flush mb-4">
-                    <li class="list-group-item pt-1">{{ post.content|safe }}</li>
-                    <li class="list-group-item">{{ post.created_on }}</li>
-                    <li class="list-group-item">{{ post.author }}</li>
+                    <li class="list-group-item pt-1">Published By: Philip Whitty</li>
+                    <li class="list-group-item">21/12/23</li>
+                    <li class="list-group-item">Course Location: Kerry</li>
                 </ul>
-                {% endfor %}
             </div>
         </div>
         <div class="col-md-4">
             <div class="card">
+                <!-- Card for The K Club -->
                 <img src="https://res.cloudinary.com/dzxjg4vwg/image/upload/v1708960595/the_k_club_500px_klsdrs.png"
-                    class="card-img-top" alt="...">
+                    class="card-img-top" alt="the-k-club-img">
                 <div class="card-body">
-                    <h5 class="card-title">The K Club</h5>
+                    <h5 class="card-title">The K Club Review:</h5>
                     <p class="card-text">A beautiful golf resort with upmarket facilities. Ideal destination if you want
                         to visit one of Ireland's premier golf clubs.</p>
                 </div>
                 <ul class="list-group list-group-flush mb-4">
-                    <li class="list-group-item">An item</li>
-                    <li class="list-group-item">A second item</li>
-                    <li class="list-group-item">A third item</li>
+                    <li class="list-group-item">Published By: Lauren Russell</li>
+                    <li class="list-group-item">02/07/23</li>
+                    <li class="list-group-item">Course Location: Kildare</li>
                 </ul>
             </div>
         </div>
         <div class="col-md-4">
             <div class="card">
+                <!-- Card for Doonbeg -->
                 <img src="https://res.cloudinary.com/dzxjg4vwg/image/upload/v1708960449/donald_trump_500px_oug4wt.png"
-                    class="card-img-top" alt="...">
+                    class="card-img-top" alt="Doonbeg-img">
                 <div class="card-body">
-                    <h5 class="card-title">Doonbeg</h5>
+                    <h5 class="card-title">Doonbeg Review:</h5>
                     <p class="card-text">What a course definitely the best I've ever played. I really enjoyed the
                         experience of playing
                         such a fabulous course.
                     </p>
                 </div>
                 <ul class="list-group list-group-flush mb-4">
-                    <li class="list-group-item">An item</li>
-                    <li class="list-group-item">A second item</li>
-                    <li class="list-group-item">A third item</li>
+                    <li class="list-group-item">Published By: Arnold Munro</li>
+                    <li class="list-group-item">15/02/24</li>
+                    <li class="list-group-item">Course Location: Clare</li>
                 </ul>
             </div>
         </div>
     </div>
 </div>
 </section>
-
-{%endblock%}
+{% endblock %}
