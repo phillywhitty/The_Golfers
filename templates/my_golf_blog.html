@@ -9,7 +9,7 @@
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-12 col-md-8 col-lg-8">
                 <div class="card bg-clr-dom-light text-white shadow-sm" style="border-radius: 1rem;">
-                    <div class="card-body-about p-5 mb-5 text-center">
+                    <div class="card-body-about p-5 mb-5 text-center container-background">
                         <div class="mb-md-2 mt-md-4 pb-5">
                             <h3 class="fw-bold mb-4 text-uppercase text-heading">My Golf Blogs</h3>
                             <br>
@@ -31,10 +31,10 @@
                             <br>
                             <br>
                             <!-- Link for updating blog -->
-                            <a href="{% url 'update_blog' blog.id %}">Update Your Blog</a>
+                            <a href="{% url 'update_blog' blog.id %}" class="link-warning">Update Your Blog</a>
                             <br>
                             <!-- Loop for deleting a blog -->
-                            <a href="{% url 'delete_blog' blog.id %}">Delete Your Blog</a>
+                            <a href="{% url 'delete_blog' blog.id %}" class="link-warning">Delete Your Blog</a>
                             {% endfor %}
                         </div>
                     </div>

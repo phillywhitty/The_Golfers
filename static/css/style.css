@@ -191,6 +191,11 @@ body {
     padding: 10px;
 }
 
+.container-background {
+    background-color: #0f483f !important;
+}
+
+
 .custom-narrow-container {
     max-width: 700px;
     background-color: #0f483f;

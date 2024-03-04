@@ -10,7 +10,7 @@
     <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-12 col-md-8 col-lg-8">
             <div class="card bg-clr-dom-light text-white shadow-sm" style="border-radius: 1rem;">
-                <div class="card-body-about p-5 mb-5 text-center">
+                <div class="card-body-about p-5 mb-5 text-center container-background">
                     <div class="mb-md-2 mt-md-4 pb-5">
                         <h3 class="fw-bold mb-4 text-uppercase text-heading">Hi {{ user }} - Delete Your Blog</h3>
                         <!-- Confirmation message -->
@@ -22,7 +22,7 @@
                         </form>
                         <!-- Link to return to user's blog -->
                         <br>
-                        <a href="{% url 'my_golf_blog' %}"></a>
+                        <a href="{% url 'my_golf_blog' %}" class="link-warning">No I Want To Return</a>
                     </div>
                 </div>
             </div>
