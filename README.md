@@ -154,10 +154,49 @@ The Golfers Blog fills these needs by:
 0. As a user I need a responsive design for seamless access on various devices, ensuring convenience while on smartphones or tablets..
 0. I expect to be able to follow the Golfers Blog through social media.
 
+-----
+# Database
+
+- The graph layout model was created below via the terminal by installing django-extensions and adding it to installed apps.
+- I then ran this command - python3 manage.py graph_models -a > mydotfile.dot
+- It created the dot file which I copy and pasted it into this site https://dreampuf.github.io/GraphvizOnline/
+- I converted it to a png image which is below. 
+### Database Model
+<div align="center">
+  <img src="./docs/readme images/graphviz (1).png" alt="DatabaseModel">
+</div>
+
+----
+
+# Agile Methodology
+
+- For streamlined project management, I used GitHub Projects which serves as the central hub, organizing user stories and tasks as GitHub issues. Utilizing the GitHub project board provides a visual representation, effectively tracking progress throughout the workflow.
+- Translating user stories into GitHub issues captures user-centric functionalities, linking them to their respective user stories for simplified access to criteria, tasks, and discussions.
+
+### Issues
+<div align="center">
+  <img src="./docs/readme images/issues_github.png" alt="Issues">
+</div>
+
+### Project Board
+<div align="center">
+  <img src="./docs/readme images/project_board.png" alt="project_board">
+</div>
+
 
 ## Visual Design
 ### Wireframes
-Wireframes: https://drive.google.com/drive/folders/1WwDSap35rXV1i8_9hCPBqiXvpMdoFJsQ?usp=sharing
+<div align="center">
+  <img src="./docs/readme images/landing_page_wf.png" alt="landing_page">
+</div>
+
+<div align="center">
+  <img src="./docs/readme images/about_us_wf.png" alt="about_us">
+</div>
+
+<div align="center">
+  <img src="./docs/readme images/login,signup,create,update and delete.png" alt="wireframes">
+</div>
 
 ### Fonts
 <div align="center">
@@ -165,6 +204,7 @@ Wireframes: https://drive.google.com/drive/folders/1WwDSap35rXV1i8_9hCPBqiXvpMdo
 </div>
 
 - The primary font, San-Serif was selected due to its standard, straightforward, and informative nature, striking a balance between approachability and professionalism. It exudes a friendly and conversational tone while maintaining a sense of seriousness.
+
 
 ### Icons
 <div align="center">
@@ -205,7 +245,30 @@ Wireframes: https://drive.google.com/drive/folders/1WwDSap35rXV1i8_9hCPBqiXvpMdo
 
 - This is the home page, where every it showcases a sign up button for golfing enthusiasts 
 - As soon as you land on the  website, you're greeted with a captivating image carefully selected to engage users senses and set the tone for their journey. 
+----
 
+# Testing
+
+- The Golfer's Blog has undergone rigorous testing, including validation for HTML and CSS. Python files were thoroughly checked using Pep8 standards from Code Institute. All assessments returned positive results, ensuring an optimized user experience during website browsing. Additionally, it's worth noting that no JavaScript was required for the website, so no specific testing was carried out in that regard
+
+- All testing was carried out and documented in [TESTING.md](TESTING.md). 
+---
+# Technologies Used
+
+
+### Languages
+- HTML
+- CSS
+- Python
+
+### Frameworks
+- Django: Utilizing Django, a high-level Python web framework, to construct the Golfersblog web application.
+- Crispy Forms: Employing Crispy Forms, a Django package, to render forms with enhanced efficiency and customization options.
+- Bootstrap v5.0: Harnessing Bootstrap v5.0, a widely adopted CSS framework, to craft visually captivating and responsive user interfaces.
+- Cloudinary: Leveraging Cloudinary, a cloud-based media management platform, for storing and delivering images within the Blog Collective project.
+
+### Database
+- ElephantSQL is a PostgreSQL database service, serving as the database for the Blog Collective project. It offers a dependable and scalable storage solution for the application's data.
 
 # Deployment
 ## Local Deployment
@@ -329,6 +392,15 @@ navigate to [https://github.com/phillywhitty/The_Golfers]
 5. Scroll down to the **Github Pages** section.
 7. Select the Master Branch as the source and **Confirm** the selection.
 8. Wait a minute or two and it should be live for viewing.
+
+
+### Future Features
+
+- **Email Confirmation for Account Creation:**  
+Implement email confirmation as part of the account creation process to bolster security measures and ensure effective user identity verification
+
+- **Enhanced Interaction Through User Profiles:**  
+Develop user profiles accessible to all, facilitating user interaction through features such as liking, commenting, and sharing interests. This cultivates a sense of community and connectivity among users
 
 ## Credits and Contact
 ### Content
