@@ -21,16 +21,14 @@
                         </form>
                     </div>
                 </div>
+                <div class="row text-center text-white mb-2">
+                    <h2>Delete your account</h2>
+                    <br>
+                    <!-- Link to delete account -->
+                    <a href="{% url 'profile_delete' %}">Proceed to delete your account</a>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-<div class="container border border-warning text-white">
-    <div class="row text-center text-white mb-2">
-        <h2>Delete your account</h2>
-        <br>
-        <!-- Link to delete account -->
-        <a href="{% url 'profile_delete' %}">Proceed to delete your account</a>
     </div>
 </div>
 {%endblock%}
