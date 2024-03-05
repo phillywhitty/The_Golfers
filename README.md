@@ -13,7 +13,6 @@
     <summary><a href="#goals">Goals</a></summary>
 
     - [Visitor Goals](#visitor-goals)
-    - [Business Goals](#business-goals)
     - [User Stories](#user-stories)
     </details></li>
 
@@ -37,18 +36,18 @@
     <li><details>
     <summary><a href="#page-elements">Page Elements</a></summary>
 
-    - [All Pages](#all-pages)
-    - [Index Page](#index-page)
-    - [Gallery Page](#about-page)
-    - [Contact Page](#contact-page)
+    - [Landing Page](#landing-page)
+    - [About Us](#about-us-page)
+    - [Create A Blog](#create-a-blog)
+    - [Popular Courses](#popular-courses)
+    - [My Golg Blog](#my-golf-blog)
+    - [Log Out](#log-out)
+    - [Messages](#messages)
     </details></li>
 
     <li><details>
     <summary><a href="#additional-features">Additional Features</a></summary>
 
-    - [Image Loading Blur](#image-loading-blur)
-    - [Email](#email)
-    </details></li>
 
     <li><details>
     <summary><a href="#feature-ideas">Feature Ideas</a></summary>
@@ -65,8 +64,6 @@
     - [Languages](#languages)
     - [Frameworks](#frameworks)
     - [Libraries](#libraries)
-    - [APIs](#apis)
-    - [Platforms](#platforms)
     - [Other Tools](#other-tools)
 </details>
 
@@ -81,13 +78,6 @@
     - [General Testing](#general-testing)
     - [Mobile Testing](#mobile-testing)
     - [Desktop Testing](#desktop-testing)
-    </details></li>
-
-    <li><details>
-    <summary><a href="#bugs">Bugs</a></summary>
-
-    - [Known Bugs](#known-bugs)
-    - [Fixed Bugs](#fixed-bugs)
     </details></li>
     </ul>
 </details>
@@ -237,7 +227,7 @@ The Golfers Blog fills these needs by:
 # Features
 ## Page Elements
 
-### Home Page
+### Landing Page
 
 <div align="center">
   <img src="docs/readme images/the_golfers_landing.png" alt="Medium Footer">
@@ -245,7 +235,71 @@ The Golfers Blog fills these needs by:
 
 - This is the home page, where every it showcases a sign up button for golfing enthusiasts 
 - As soon as you land on the  website, you're greeted with a captivating image carefully selected to engage users senses and set the tone for their journey. 
+
+
+### About Us
+
+<div align="center">
+  <img src="./docs/readme images/about_us.png" alt="Medium Footer">
+</div>
+
+- This page is the About section of The Golfers Blog, your go-to hub for exploring Ireland's stunning golf courses. Whether you're a seasoned pro or a beginner, join our community to share experiences, find inspiration, and tee off on an unforgettable golfing journey!
+
+### Create A Blog
+
+<div align="center">
+  <img src="./docs/readme images/create_a_blog.png" alt="Medium Footer">
+</div>
+
+- This page serves as the "Create a Blog" feature on The Golfers Blog, allowing users to craft their own posts and save them to their personal golf blog
+
+
+### Popular Courses
+
+<div align="center">
+  <img src="./docs/readme images/popular_courses.png" alt="Medium Footer">
+</div>
+
+- This page showcases the "Popular Courses" selected by our admins, featuring the top-rated golf courses in Ireland along with reviews, posting dates, and the names of the admins who posted them. Explore these renowned destinations, curated by our team, and discover the finest golfing experiences Ireland has to offer.
+
+
+### My Golf Blog
+
+<div align="center">
+  <img src="./docs/readme images/my_golf_blog.png" alt="Medium Footer">
+</div>
+
+- This page is your personal "My Golf Blog" space, where you can view and manage the content you've created. Easily access your blogs, update them with new experiences or insights, and delete them if desired.
+
+### Log Out
+
+<div align="center">
+  <img src="./docs/readme images/log_out.png" alt="Medium Footer">
+</div>
+
+- This page is the "Logout" feature, allowing users to effortlessly sign out of their accounts. After logging out, users are prompted with a message confirming their successful logout. Experience seamless navigation and enhanced security with our easy-to-use logout functionality
+
+### Messages
+
+<div align="center">
+  <img src="./docs/readme images/messages.png" alt="Medium Footer">
+</div>
+
+- After your action, such as logging in, signing out, creating a blog, updating, or deleting, you'll receive a confirmation message to keep you informed.
+
 ----
+
+### Responivness
+
+<div align="center">
+  <img src="./docs/readme images/Responsiveness_For_Smaller_Devices.png" alt="Medium Footer">
+</div>
+
+- This image demonstrates the responsiveness of the app, ensuring optimal display and functionality even on smaller screens
+
+----
+
+
 
 # Testing
 
@@ -254,6 +308,7 @@ The Golfers Blog fills these needs by:
 - All testing was carried out and documented in [TESTING.md](TESTING.md). 
 ---
 # Technologies Used
+
 
 
 ### Languages
