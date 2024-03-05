@@ -10,7 +10,7 @@ class CreateGolfBlogForm(ModelForm):
 
     class Meta:
         model = AddGolfCourse
-        fields = ['course_name', 'location', 'description', ]
+        fields = ['course_name', 'location', 'content', ]
         exclude = ['user', ]
 
 

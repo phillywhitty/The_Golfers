@@ -25,8 +25,8 @@ ALLOWED_HOSTS = ['the-golfers-blog-ed907c4b0918.herokuapp.com',
                 '8000-phillywhitty-thegolfers-ohlgcowv5ox.ws-eu108.gitpod.io'
 ]
 
-CSRF_TRUSTED_ORIGINS = ['the-golfers-blog-ed907c4b0918.herokuapp.com',
-                        '8000-phillywhitty-thegolfers-ohlgcowv5ox.ws-eu108.gitpod.io'
+CSRF_TRUSTED_ORIGINS = ['https://the-golfers-blog-ed907c4b0918.herokuapp.com',
+                        'https://8000-phillywhitty-thegolfers-ohlgcowv5ox.ws-eu108.gitpod.io'
 ]
 
 
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'crispy_forms',
+    'crispy_bootstrap5',
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
@@ -52,6 +53,7 @@ INSTALLED_APPS = [
 
 
 MIDDLEWARE = [
+    'allauth.account.middleware.AccountMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -93,7 +95,8 @@ AUTHENTICATION_BACKENDS = (
 
 SITE_ID = 1
 
-CRISPY_TEMPLATE_PACK = "bootstrap4"
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 
 

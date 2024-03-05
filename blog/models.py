@@ -16,7 +16,7 @@ STATUS = ((0, "Draft"), (1, "Published"))
 class AddGolfCourse(models.Model):
     course_name = models.CharField(max_length=100, blank=True)
     location = models.CharField(max_length=100, blank=True)
-    description = models.CharField(max_length=2000, blank=True)
+    content = models.CharField(max_length=2000, blank=True)
     featured_image = CloudinaryField("image", default="placeholder")
     created_on = models.DateTimeField(auto_now=True)
     user = models.ForeignKey(User, max_length=10, on_delete=models.CASCADE,
